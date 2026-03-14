@@ -9,12 +9,9 @@
   :root{--teal:#0d9488;--teal-dark:#0f766e;--teal-light:#99f6e4;--sky:#38bdf8;--sky-light:#e0f2fe;--green:#22c55e;--green-dark:#15803d;--gold:#f59e0b;--gold-light:#fef3c7;--coral:#f43f5e;--purple:#a855f7;--indigo:#6366f1;--slate:#334155;--slate-light:#94a3b8;--bg:#f0fdf9;--card-shadow:0 10px 40px rgba(0,0,0,0.08);--card-hover:0 20px 60px rgba(0,0,0,0.12);}
   *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
   body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--slate);overflow-x:hidden;}
-
-  /* === INTRO === */
   .intro{position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0c0a2a 0%,#1a1145 40%,#0f2040 100%);transition:opacity 1s ease;overflow:hidden;}
   .intro.fade-out{opacity:0;pointer-events:none;}
-  .intro-stars{position:absolute;top:0;left:0;width:100%;height:100%;}
-  .intro-star{position:absolute;background:#fff;border-radius:50%;animation:twinkle 2s ease-in-out infinite alternate;}
+  .intro-stars{position:absolute;top:0;left:0;width:100%;height:100%;}.intro-star{position:absolute;background:#fff;border-radius:50%;animation:twinkle 2s ease-in-out infinite alternate;}
   @keyframes twinkle{0%{opacity:0.2;transform:scale(0.8);}100%{opacity:1;transform:scale(1.2);}}
   .intro-content{position:relative;width:90%;max-width:700px;height:300px;}
   .intro-from,.intro-to{position:absolute;top:50%;font-family:'Fredoka',sans-serif;color:#fff;font-size:clamp(0.8rem,2.5vw,1.1rem);white-space:nowrap;}
@@ -30,10 +27,7 @@
   .intro-text{position:absolute;bottom:15%;left:50%;transform:translateX(-50%);text-align:center;animation:fade-up 1s ease-out 3.5s both;}
   .intro-text h2{font-family:'Fredoka',sans-serif;font-size:clamp(1.2rem,3vw,1.8rem);color:var(--gold);margin-bottom:0.3rem;}
   .intro-text p{color:rgba(255,255,255,0.7);font-size:0.9rem;}
-  .intro-skip{position:absolute;bottom:20px;right:20px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:0.4rem 1.2rem;border-radius:50px;font-family:'Fredoka',sans-serif;font-size:0.85rem;cursor:pointer;z-index:10;transition:background 0.2s;}
-  .intro-skip:hover{background:rgba(255,255,255,0.25);}
-
-  /* === HERO === */
+  .intro-skip{position:absolute;bottom:20px;right:20px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:0.4rem 1.2rem;border-radius:50px;font-family:'Fredoka',sans-serif;font-size:0.85rem;cursor:pointer;z-index:10;}
   .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#0d9488 0%,#0ea5e9 40%,#38bdf8 70%,#7dd3fc 100%);overflow:hidden;padding:2rem;}
   .hero::before{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='%23f0fdf9' d='M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,80C672,85,768,75,864,64C960,53,1056,43,1152,42.7C1248,43,1344,53,1392,58.7L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z'/%3E%3C/svg%3E") no-repeat bottom;background-size:cover;z-index:2;}
   .cloud{position:absolute;background:rgba(255,255,255,0.25);border-radius:50%;filter:blur(1px);}
@@ -43,7 +37,6 @@
   .cloud-4{width:140px;height:45px;top:35%;right:5%;animation:drift-r 22s linear infinite 8s;}
   @keyframes drift{0%{transform:translateX(0);}100%{transform:translateX(110vw);}}
   @keyframes drift-r{0%{transform:translateX(0);}100%{transform:translateX(-110vw);}}
-  /* Hero plane */
   .hero-plane{position:absolute;font-size:1.5rem;top:20%;animation:hero-fly 18s linear infinite;opacity:0.3;z-index:1;}
   @keyframes hero-fly{0%{left:-5%;top:18%;transform:rotate(5deg);}50%{top:25%;}100%{left:105%;top:15%;transform:rotate(-2deg);}}
   .fern{position:absolute;font-size:8rem;opacity:0.08;pointer-events:none;}
@@ -53,8 +46,8 @@
   .hero h1 .accent{display:block;background:linear-gradient(90deg,var(--gold),#fbbf24,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
   .hero-subtitle{font-size:clamp(1rem,2.5vw,1.4rem);color:rgba(255,255,255,0.9);margin-top:1rem;font-weight:600;animation:fade-up 1s ease-out 0.5s both;}
   .hero-people{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;justify-content:center;animation:fade-up 1s ease-out 0.7s both;}
-  .person-badge{background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);padding:0.5rem 1.2rem;border-radius:50px;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:0.4rem;transition:transform 0.3s,background 0.3s;}
-  .person-badge:hover{transform:translateY(-3px);background:rgba(255,255,255,0.3);}
+  .person-badge{background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);padding:0.5rem 1.2rem;border-radius:50px;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:0.4rem;transition:transform 0.3s;}
+  .person-badge:hover{transform:translateY(-3px);}
   .countdown-wrap{margin-top:2rem;animation:fade-up 1s ease-out 0.9s both;}
   .countdown{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;}
   .cd-unit{background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.25);border-radius:16px;padding:0.6rem 1rem;min-width:70px;text-align:center;}
@@ -62,20 +55,12 @@
   .cd-label{font-size:0.7rem;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:1px;font-weight:700;}
   .cd-live{font-size:1.3rem;color:#fff;font-weight:700;margin-top:1.5rem;}
   .hero-scroll{margin-top:2rem;animation:fade-up 1s ease-out 1.1s both;z-index:3;}
-  .scroll-btn{display:inline-flex;align-items:center;gap:0.5rem;background:#fff;color:var(--teal-dark);border:none;padding:0.9rem 2rem;border-radius:50px;font-family:'Fredoka',sans-serif;font-size:1.1rem;font-weight:600;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.15);transition:transform 0.3s,box-shadow 0.3s;}
+  .scroll-btn{display:inline-flex;align-items:center;gap:0.5rem;background:#fff;color:var(--teal-dark);border:none;padding:0.9rem 2rem;border-radius:50px;font-family:'Fredoka',sans-serif;font-size:1.1rem;font-weight:600;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.15);transition:transform 0.3s;}
   .scroll-btn:hover{transform:translateY(-3px) scale(1.03);}
   .scroll-btn .arrow{display:inline-block;animation:bob 2s ease-in-out infinite;}
   @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
   @keyframes bounce-in{0%{transform:scale(0);}60%{transform:scale(1.2);}100%{transform:scale(1);}}
   @keyframes fade-up{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
-
-  /* === PARALLAX DIVIDERS === */
-  .parallax-divider{position:relative;height:120px;overflow:hidden;pointer-events:none;}
-  .parallax-layer{position:absolute;width:100%;will-change:transform;}
-  .para-mountains{bottom:0;left:0;right:0;height:100px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%230d948830' d='M0,100 L120,40 L240,70 L360,20 L480,60 L600,30 L720,50 L840,10 L960,55 L1080,25 L1200,65 L1320,35 L1440,50 L1440,100Z'/%3E%3C/svg%3E") repeat-x bottom;background-size:1440px 100px;}
-  .para-mountains-front{bottom:0;height:80px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%230d948815' d='M0,80 L180,50 L360,30 L540,55 L720,20 L900,45 L1080,15 L1260,50 L1440,35 L1440,80Z'/%3E%3C/svg%3E") repeat-x bottom;background-size:1440px 80px;}
-
-  /* === TIMELINE === */
   .timeline-section{max-width:900px;margin:0 auto;padding:4rem 1.5rem 6rem;}
   .section-title{font-family:'Fredoka',sans-serif;font-size:2.2rem;text-align:center;color:var(--teal-dark);margin-bottom:3rem;}
   .section-title span{color:var(--gold);}
@@ -99,8 +84,6 @@
   .card-body{max-height:0;overflow:hidden;transition:max-height 0.6s cubic-bezier(0.4,0,0.2,1);}
   .day-card.open .card-body{max-height:6000px;}
   .card-content{padding:0 1.5rem 1.5rem;}
-
-  /* Carousel */
   .carousel{position:relative;width:100%;margin-bottom:1rem;border-radius:12px;overflow:hidden;background:#e2e8f0;}
   .carousel-track{display:flex;transition:transform 0.4s ease;}
   .carousel-slide{min-width:100%;position:relative;}
@@ -111,31 +94,29 @@
   .carousel-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2;}
   .carousel-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.5);border:none;cursor:pointer;transition:background 0.2s,transform 0.2s;padding:0;}
   .carousel-dot.active{background:#fff;transform:scale(1.3);}
-
-  /* YouTube embed */
   .video-embed{position:relative;border-radius:12px;overflow:hidden;margin:0.8rem 0;cursor:pointer;background:#000;}
   .video-thumb{position:relative;padding-bottom:56.25%;background-size:cover;background-position:center;}
   .video-thumb::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.35);transition:background 0.2s;}
   .video-embed:hover .video-thumb::after{background:rgba(0,0,0,0.2);}
-  .video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:rgba(255,255,255,0.95);color:var(--coral);border:none;width:56px;height:56px;border-radius:50%;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:transform 0.2s;}
-  .video-play:hover{transform:translate(-50%,-50%) scale(1.1);}
+  .video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:rgba(255,255,255,0.95);color:var(--coral);border:none;width:56px;height:56px;border-radius:50%;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.3);}
   .video-label{position:absolute;bottom:12px;left:12px;z-index:2;color:#fff;font-size:0.8rem;font-weight:700;text-shadow:0 1px 4px rgba(0,0,0,0.5);}
   .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
   .video-embed.playing .video-thumb,.video-embed.playing .video-play,.video-embed.playing .video-label{display:none;}
   .video-embed.playing{padding-bottom:56.25%;}
-
   .detail-row{display:flex;align-items:flex-start;gap:0.6rem;margin-bottom:0.6rem;font-size:0.95rem;line-height:1.5;}
   .detail-row .icon{flex-shrink:0;font-size:1.1rem;margin-top:1px;}
+  .cost-tag{display:inline-block;background:#dcfce7;color:var(--green-dark);font-size:0.78rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:8px;margin-left:0.3rem;}
+  .cost-tag.free{background:#dbeafe;color:#1d4ed8;}
   .people-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem;}
   .people-tag{font-size:0.8rem;padding:0.25rem 0.7rem;border-radius:20px;font-weight:700;}
   .tag-selma{background:#fce7f3;color:#be185d;}.tag-yasmeen{background:#ede9fe;color:#7c3aed;}.tag-ibrahim{background:#dbeafe;color:#1d4ed8;}.tag-haajar{background:#d1fae5;color:#047857;}
   .hotel-card{background:linear-gradient(135deg,var(--gold-light),#fff7ed);border:1px solid #fde68a;border-radius:12px;padding:1rem;margin-top:0.8rem;}
-  .hotel-card h4{font-family:'Fredoka',sans-serif;color:var(--gold);margin-bottom:0.4rem;font-size:1rem;}
-  .hotel-card p{font-size:0.88rem;line-height:1.5;}
+  .hotel-card h4{font-family:'Fredoka',sans-serif;color:var(--gold);margin-bottom:0.4rem;font-size:1rem;}.hotel-card p{font-size:0.88rem;line-height:1.5;}
   .overnight-badge{display:inline-flex;align-items:center;gap:0.3rem;background:linear-gradient(135deg,#312e81,#4338ca);color:#fff;padding:0.3rem 0.9rem;border-radius:20px;font-size:0.82rem;font-weight:700;margin-top:0.5rem;}
   .weather-strip{display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;background:linear-gradient(135deg,#eff6ff,#f0f9ff);border:1px solid #bfdbfe;border-radius:12px;padding:0.8rem 1rem;margin-bottom:1rem;}
-  .ws-icon{font-size:1.8rem;animation:weather-bob 3s ease-in-out infinite;}.ws-temps{font-family:'Fredoka',sans-serif;font-size:1.1rem;}.ws-temps .hi{color:var(--coral);}.ws-temps .lo{color:#3b82f6;}
+  .ws-icon{font-size:1.8rem;animation:weather-bob 3s ease-in-out infinite;}
   @keyframes weather-bob{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-3px) rotate(5deg);}}
+  .ws-temps{font-family:'Fredoka',sans-serif;font-size:1.1rem;}.ws-temps .hi{color:var(--coral);}.ws-temps .lo{color:#3b82f6;}
   .ws-rain{font-size:0.82rem;color:var(--slate-light);font-weight:600;}.ws-desc{font-size:0.85rem;color:var(--slate);flex-basis:100%;margin-top:0.2rem;line-height:1.4;}
   .wear-box{background:linear-gradient(135deg,#fdf4ff,#faf5ff);border:1px solid #e9d5ff;border-radius:12px;padding:0.8rem 1rem;margin-bottom:1rem;}
   .wear-box h4{font-family:'Fredoka',sans-serif;font-size:0.95rem;color:var(--purple);margin-bottom:0.4rem;}.wear-box p{font-size:0.85rem;line-height:1.5;}
@@ -144,9 +125,10 @@
   .suggest-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:0.8rem;}
   .sc-name{font-weight:700;font-size:0.9rem;margin-bottom:0.2rem;}.sc-type{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.3rem;}
   .sc-desc{font-size:0.82rem;line-height:1.4;color:#64748b;}.sc-type.food{color:var(--coral);}.sc-type.activity{color:var(--teal);}.sc-type.tip{color:var(--gold);}
+  .maps-btn{display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;padding:0.35rem 0.8rem;background:linear-gradient(135deg,#4285f4,#34a853);color:#fff;border-radius:8px;font-size:0.75rem;font-weight:700;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
+  .maps-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+  .halal-badge{display:inline-block;background:#dcfce7;color:var(--green-dark);font-size:0.7rem;font-weight:700;padding:0.1rem 0.5rem;border-radius:6px;margin-left:0.3rem;}
   .divider{border:none;border-top:1px dashed #cbd5e1;margin:1rem 0;}
-
-  /* Scratch */
   .scratch-card{position:relative;border-radius:14px;overflow:hidden;margin:0.8rem 0;min-height:80px;cursor:pointer;user-select:none;-webkit-user-select:none;}
   .scratch-content{padding:1rem;text-align:center;font-size:0.92rem;line-height:1.5;}
   .scratch-content.personal{background:linear-gradient(135deg,#fdf2f8,#fce7f3);border:1px solid #fbcfe8;}
@@ -161,8 +143,6 @@
   .scratch-hint-sub{position:relative;z-index:3;color:rgba(255,255,255,0.8);font-size:0.75rem;font-weight:600;pointer-events:none;}
   @keyframes shimmer{0%,100%{opacity:1;}50%{opacity:0.6;}}
   .scratch-card.revealed .scratch-overlay{opacity:0;pointer-events:none;transition:opacity 0.5s;}
-
-  /* Quiz */
   .quiz-section{background:linear-gradient(135deg,#fef3c7,#fff7ed);padding:4rem 1.5rem;}
   .quiz-wrap{max-width:700px;margin:0 auto;}
   .quiz-progress{text-align:center;margin-bottom:2rem;}
@@ -171,8 +151,7 @@
   .quiz-progress-text{font-family:'Fredoka',sans-serif;font-size:0.95rem;color:var(--slate);}
   .quiz-card{background:#fff;border-radius:20px;padding:2rem;box-shadow:var(--card-shadow);display:none;}
   .quiz-card.active{display:block;animation:fade-up 0.4s ease-out;}
-  .quiz-q{font-family:'Fredoka',sans-serif;font-size:1.2rem;color:var(--slate);margin-bottom:1.5rem;line-height:1.4;}
-  .quiz-q .q-num{color:var(--gold);font-size:1rem;}
+  .quiz-q{font-family:'Fredoka',sans-serif;font-size:1.2rem;color:var(--slate);margin-bottom:1.5rem;line-height:1.4;}.quiz-q .q-num{color:var(--gold);}
   .quiz-opts{display:flex;flex-direction:column;gap:0.8rem;}
   .quiz-opt{border:2px solid #e2e8f0;border-radius:12px;padding:0.9rem 1.2rem;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.3s;background:#fff;text-align:left;font-family:'Nunito',sans-serif;}
   .quiz-opt:hover{border-color:var(--gold);background:#fffbeb;}
@@ -181,15 +160,12 @@
   .quiz-opt.disabled{pointer-events:none;}
   .quiz-explain{margin-top:1rem;padding:1rem;border-radius:12px;background:#f0fdf4;border:1px solid #bbf7d0;font-size:0.9rem;line-height:1.5;display:none;}
   .quiz-explain.show{display:block;animation:fade-up 0.3s;}
-  .quiz-next-btn{margin-top:1.5rem;background:var(--gold);color:#fff;border:none;padding:0.7rem 2rem;border-radius:50px;font-family:'Fredoka',sans-serif;font-size:1rem;cursor:pointer;display:none;transition:transform 0.2s;}
-  .quiz-next-btn.show{display:inline-block;}.quiz-next-btn:hover{transform:scale(1.05);}
+  .quiz-next-btn{margin-top:1.5rem;background:var(--gold);color:#fff;border:none;padding:0.7rem 2rem;border-radius:50px;font-family:'Fredoka',sans-serif;font-size:1rem;cursor:pointer;display:none;}.quiz-next-btn.show{display:inline-block;}
   .quiz-result{text-align:center;display:none;}.quiz-result.active{display:block;animation:fade-up 0.4s;}
   .quiz-score{font-family:'Fredoka',sans-serif;font-size:3rem;color:var(--gold);}
   .quiz-rating{font-family:'Fredoka',sans-serif;font-size:1.4rem;color:var(--teal-dark);margin:0.5rem 0;}
   .quiz-result-msg{font-size:1rem;color:var(--slate);margin-bottom:1.5rem;}
   .quiz-retry{background:var(--teal);color:#fff;border:none;padding:0.7rem 2rem;border-radius:50px;font-family:'Fredoka',sans-serif;font-size:1rem;cursor:pointer;}
-
-  /* Packing */
   .packing-section{background:linear-gradient(135deg,#fdf4ff,#eff6ff);padding:4rem 1.5rem;}
   .packing-wrap{max-width:900px;margin:0 auto;}
   .pack-progress{text-align:center;margin-bottom:2rem;}
@@ -203,49 +179,27 @@
   .pack-item.checked{opacity:0.5;}.pack-item.checked .pack-label{text-decoration:line-through;}
   .pack-check{width:22px;height:22px;border:2px solid #cbd5e1;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;background:#fff;}
   .pack-item.checked .pack-check{background:var(--teal);border-color:var(--teal);}
-  .pack-check-mark{color:#fff;font-size:0.8rem;opacity:0;transition:opacity 0.2s;}
-  .pack-item.checked .pack-check-mark{opacity:1;}
-  .pack-label{font-size:0.9rem;transition:all 0.2s;}
-  @keyframes check-pop{0%{transform:scale(0);}60%{transform:scale(1.3);}100%{transform:scale(1);}}
-  .pack-item.just-checked .pack-check{animation:check-pop 0.3s;}
-
-  /* Hotels */
+  .pack-check-mark{color:#fff;font-size:0.8rem;opacity:0;transition:opacity 0.2s;}.pack-item.checked .pack-check-mark{opacity:1;}
+  .pack-label{font-size:0.9rem;}
+  @keyframes check-pop{0%{transform:scale(0);}60%{transform:scale(1.3);}100%{transform:scale(1);}}.pack-item.just-checked .pack-check{animation:check-pop 0.3s;}
   .hotels-section{max-width:900px;margin:0 auto;padding:4rem 1.5rem 6rem;}
   .hotels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
-  .hotel-detail-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform 0.3s,box-shadow 0.3s;}
-  .hotel-detail-card:hover{transform:translateY(-4px);box-shadow:var(--card-hover);}
-  .hotel-detail-header{padding:1.5rem;color:#fff;font-family:'Fredoka',sans-serif;}
-  .hotel-detail-header h3{font-size:1.3rem;margin-bottom:0.3rem;}.hotel-detail-header .location{opacity:0.9;font-size:0.9rem;}
-  .hotel-detail-body{padding:1.5rem;}
-  .room-info{margin-bottom:0.8rem;padding-bottom:0.8rem;border-bottom:1px solid #e2e8f0;}.room-info:last-of-type{border-bottom:none;}
+  .hotel-detail-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform 0.3s;}.hotel-detail-card:hover{transform:translateY(-4px);}
+  .hotel-detail-header{padding:1.5rem;color:#fff;font-family:'Fredoka',sans-serif;}.hotel-detail-header h3{font-size:1.3rem;margin-bottom:0.3rem;}.hotel-detail-header .location{opacity:0.9;font-size:0.9rem;}
+  .hotel-detail-body{padding:1.5rem;}.room-info{margin-bottom:0.8rem;padding-bottom:0.8rem;border-bottom:1px solid #e2e8f0;}.room-info:last-of-type{border-bottom:none;}
   .room-name{font-weight:700;font-size:0.92rem;}.room-conf{font-size:0.82rem;color:var(--slate-light);font-family:monospace;}.room-guest{font-size:0.85rem;color:var(--slate-light);}
   .hotel-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--teal);font-weight:700;text-decoration:none;font-size:0.95rem;margin-top:0.5rem;}.hotel-link:hover{text-decoration:underline;}
-
-  /* Sheep */
   .sheep-parade{position:relative;height:60px;overflow:hidden;margin-top:-30px;}
   .sheep{position:absolute;font-size:2rem;animation:sheep-walk 20s linear infinite;bottom:5px;}
   .sheep:nth-child(1){animation-delay:0s;}.sheep:nth-child(2){animation-delay:-5s;}.sheep:nth-child(3){animation-delay:-10s;}.sheep:nth-child(4){animation-delay:-15s;}
   @keyframes sheep-walk{0%{right:-10%;transform:scaleX(-1);}100%{right:110%;transform:scaleX(-1);}}
-
-  /* Animated boat */
   .boat-float{display:inline-block;animation:boat-rock 3s ease-in-out infinite;}
   @keyframes boat-rock{0%,100%{transform:rotate(-3deg) translateY(0);}50%{transform:rotate(3deg) translateY(-3px);}}
-
-  /* Compass */
   .compass-spin{display:inline-block;animation:compass 8s linear infinite;}
   @keyframes compass{0%{transform:rotate(0);}100%{transform:rotate(360deg);}}
-
   .footer{text-align:center;padding:3rem 1.5rem;background:linear-gradient(135deg,var(--teal-dark),#0e7490);color:rgba(255,255,255,0.8);font-size:0.9rem;}
-  .footer .big-emoji{font-size:3rem;margin-bottom:1rem;display:block;}.footer p{margin-bottom:0.3rem;}
-  .footer .love{color:#fbbf24;font-weight:700;font-size:1.1rem;}
-
-  @media(max-width:640px){
-    .timeline::before{left:18px;}.day-card{padding-left:52px;}.day-dot{left:4px;width:28px;height:28px;font-size:0.85rem;}
-    .card-header{padding:1rem;}.card-content{padding:0 1rem 1rem;}.suggest-grid{grid-template-columns:1fr;}
-    .countdown{gap:0.5rem;}.cd-unit{min-width:60px;padding:0.5rem 0.6rem;}
-    .intro-content{height:200px;}.intro-plane{font-size:1.5rem;}
-  }
-
+  .footer .big-emoji{font-size:3rem;margin-bottom:1rem;display:block;}.footer p{margin-bottom:0.3rem;}.footer .love{color:#fbbf24;font-weight:700;font-size:1.1rem;}
+  @media(max-width:640px){.timeline::before{left:18px;}.day-card{padding-left:52px;}.day-dot{left:4px;width:28px;height:28px;font-size:0.85rem;}.card-header{padding:1rem;}.card-content{padding:0 1rem 1rem;}.suggest-grid{grid-template-columns:1fr;}.countdown{gap:0.5rem;}.cd-unit{min-width:60px;}.intro-content{height:200px;}.intro-plane{font-size:1.5rem;}}
   .theme-arrival .day-dot{background:var(--sky);}.theme-arrival .card-day-num{color:var(--sky);}
   .theme-hobbiton .day-dot{background:var(--green);}.theme-hobbiton .card-day-num{color:var(--green);}
   .theme-geothermal .day-dot{background:var(--coral);}.theme-geothermal .card-day-num{color:var(--coral);}
@@ -260,26 +214,19 @@
 </style>
 </head>
 <body>
-
-<!-- === INTRO ANIMATION === -->
 <div class="intro" id="intro">
   <div class="intro-stars" id="intro-stars"></div>
   <div class="intro-content">
     <div class="intro-from"><span class="flag">&#x1F1FA;&#x1F1F8;</span>Charlotte, NC</div>
-    <svg class="intro-trail" viewBox="0 0 700 300" preserveAspectRatio="xMidYMid meet">
-      <path d="M 50,150 C 170,60 380,240 650,150" />
-      <path class="trail-draw" d="M 50,150 C 170,60 380,240 650,150" />
-    </svg>
+    <svg class="intro-trail" viewBox="0 0 700 300" preserveAspectRatio="xMidYMid meet"><path d="M 50,150 C 170,60 380,240 650,150"/><path class="trail-draw" d="M 50,150 C 170,60 380,240 650,150"/></svg>
     <div class="intro-plane">&#x2708;&#xFE0F;</div>
     <div class="intro-to"><span class="flag">&#x1F1F3;&#x1F1FF;</span>Auckland, NZ</div>
   </div>
-  <div class="intro-text"><h2>18,000 km across the Pacific</h2><p>Your adventure begins in 5&hellip;</p></div>
+  <div class="intro-text"><h2>18,000 km across the Pacific</h2><p>Your adventure begins&hellip;</p></div>
   <button class="intro-skip" onclick="skipIntro()">Skip &#x2192;</button>
 </div>
-
 <canvas id="confetti-canvas"></canvas>
 
-<!-- === HERO === -->
 <section class="hero">
   <div class="cloud cloud-1"></div><div class="cloud cloud-2"></div><div class="cloud cloud-3"></div><div class="cloud cloud-4"></div>
   <div class="hero-plane">&#x2708;&#xFE0F;</div>
@@ -287,286 +234,191 @@
   <div class="hero-flag">&#x1F1F3;&#x1F1FF;</div>
   <h1>9-Day Adventure<span class="accent">Auckland &amp; Queenstown</span></h1>
   <p class="hero-subtitle">A surprise family trip to Aotearoa New Zealand!</p>
-  <div class="hero-people">
-    <span class="person-badge">&#x1F469; Selma</span><span class="person-badge">&#x1F467; Yasmeen</span>
-    <span class="person-badge">&#x1F468; Ibrahim</span><span class="person-badge">&#x1F470; Haajar</span>
-  </div>
-  <div class="countdown-wrap">
-    <div class="countdown" id="countdown">
-      <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hours</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Minutes</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Seconds</span></div>
-    </div>
-    <div class="cd-live" id="cd-live" style="display:none"></div>
-  </div>
-  <div class="hero-scroll">
-    <button class="scroll-btn" onclick="document.getElementById('itinerary').scrollIntoView({behavior:'smooth'})">
-      <span class="compass-spin">&#x1F9ED;</span> Explore the Itinerary <span class="arrow">&#x2193;</span>
-    </button>
-  </div>
+  <div class="hero-people"><span class="person-badge">&#x1F469; Selma</span><span class="person-badge">&#x1F467; Yasmeen</span><span class="person-badge">&#x1F468; Ibrahim</span><span class="person-badge">&#x1F470; Haajar</span></div>
+  <div class="countdown-wrap"><div class="countdown" id="countdown"><div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div><div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hours</span></div><div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Minutes</span></div><div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Seconds</span></div></div><div class="cd-live" id="cd-live" style="display:none"></div></div>
+  <div class="hero-scroll"><button class="scroll-btn" onclick="document.getElementById('itinerary').scrollIntoView({behavior:'smooth'})"><span class="compass-spin">&#x1F9ED;</span> Explore the Itinerary <span class="arrow">&#x2193;</span></button></div>
 </section>
 
-<!-- === ITINERARY === -->
 <section class="timeline-section" id="itinerary">
   <h2 class="section-title">Day by <span>Day</span></h2>
   <div class="timeline">
 
-    <!-- DAY 1 -->
-    <div class="day-card theme-arrival" data-day="1">
-      <div class="day-dot">&#x2708;&#xFE0F;</div>
-      <div class="card-inner" onclick="toggleCard(this)">
-        <div class="card-header"><span class="card-day-num">01</span><div class="card-header-text"><div class="card-title">Arrival in Auckland</div><div class="card-date">Thursday, April 2</div></div><span class="card-expand-icon">&#x25BC;</span></div>
-        <div class="card-body"><div class="card-content">
-          <div class="carousel"><div class="carousel-track">
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Auckland_Skyline_from_Viaduct_Basin_%289695340619%29.jpg/1200px-Auckland_Skyline_from_Viaduct_Basin_%289695340619%29.jpg" alt="Auckland Viaduct"><div class="slide-caption">Auckland Viaduct Harbour</div></div>
-            <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1584169351265-6a0c1b5c4700?w=1200&h=400&fit=crop" alt="Auckland"><div class="slide-caption">Auckland CBD &amp; Harbour</div></div>
-          </div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
-          <div class="video-embed" data-id="ABrKqFC2Rtw"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/ABrKqFC2Rtw/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Auckland Viaduct Drone Footage</div></div></div>
-          <div class="weather-strip"><span class="ws-icon">&#x26C5;</span><span class="ws-temps"><span class="hi">20&#xB0;C</span> / <span class="lo">13&#xB0;C</span></span><span class="ws-rain">&#x1F327;&#xFE0F; ~45%</span><span class="ws-desc">Mild &amp; changeable. Classic Auckland autumn &mdash; pack a rain jacket!</span></div>
-          <div class="wear-box"><h4>&#x1F45A; What to Wear</h4><p>Light layers, <strong>packable rain jacket</strong>, jeans, closed-toe shoes, light scarf for evening.</p></div>
-          <div class="detail-row"><span class="icon">&#x2708;&#xFE0F;</span><span>Flight arrives ~2 PM &mdash; Ibrahim picks up</span></div>
-          <div class="detail-row"><span class="icon">&#x1F3E0;</span><span>Settle in, freshen up, rest</span></div>
-          <div class="detail-row"><span class="icon">&#x1F6B6;</span><span>Optional stroll around <strong>Viaduct Waterfront</strong></span></div>
-          <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; From Ibrahim &amp; Haajar</div><div class="sc-msg">Welcome to our home! We've been counting down the days until you got here. This trip is going to be unforgettable.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">A surprise is hiding underneath</span></div></div>
-          <hr class="divider">
-          <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Dinner Tonight</h4><div class="suggest-grid">
-            <div class="suggest-card"><div class="sc-name">Soul Bar &amp; Bistro</div><div class="sc-type food">Seafood / Contemporary NZ</div><div class="sc-desc">Viaduct anchor. Fresh oysters, harbourside views. Book ahead.</div></div>
-            <div class="suggest-card"><div class="sc-name">Hello Beasty</div><div class="sc-type food">Asian Fusion</div><div class="sc-desc">Amazing sharing plates, perfect for a group.</div></div>
-          </div></div>
-          <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
-        </div></div>
-      </div>
-    </div>
+<!-- DAY 1 -->
+<div class="day-card theme-arrival" data-day="1"><div class="day-dot">&#x2708;&#xFE0F;</div><div class="card-inner" onclick="toggleCard(this)"><div class="card-header"><span class="card-day-num">01</span><div class="card-header-text"><div class="card-title">Arrival in Auckland</div><div class="card-date">Thursday, April 2</div></div><span class="card-expand-icon">&#x25BC;</span></div>
+<div class="card-body"><div class="card-content">
+  <div class="carousel"><div class="carousel-track"><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Auckland_Skyline_from_Viaduct_Basin_%289695340619%29.jpg/1200px-Auckland_Skyline_from_Viaduct_Basin_%289695340619%29.jpg" alt="Auckland"><div class="slide-caption">Auckland Viaduct Harbour</div></div><div class="carousel-slide"><img src="https://images.unsplash.com/photo-1584169351265-6a0c1b5c4700?w=1200&h=400&fit=crop" alt="Auckland"><div class="slide-caption">Auckland CBD &amp; Harbour</div></div></div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
+  <div class="video-embed" data-id="ABrKqFC2Rtw"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/ABrKqFC2Rtw/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Auckland Viaduct Drone</div></div></div>
+  <div class="weather-strip"><span class="ws-icon">&#x26C5;</span><span class="ws-temps"><span class="hi">20&#xB0;C</span> / <span class="lo">13&#xB0;C</span></span><span class="ws-rain">&#x1F327;&#xFE0F; ~45%</span><span class="ws-desc">Mild &amp; changeable. Classic Auckland autumn &mdash; rain jacket ready!</span></div>
+  <div class="wear-box"><h4>&#x1F45A; What to Wear</h4><p>Light layers, <strong>rain jacket</strong>, jeans, closed-toe shoes, scarf for evening.</p></div>
+  <div class="detail-row"><span class="icon">&#x2708;&#xFE0F;</span><span>Flight arrives ~2 PM &mdash; Ibrahim picks up</span></div>
+  <div class="detail-row"><span class="icon">&#x1F3E0;</span><span>Settle in, freshen up, rest</span></div>
+  <div class="detail-row"><span class="icon">&#x1F6B6;</span><span>Optional stroll around <strong>Viaduct Waterfront</strong></span></div>
+  <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; From Ibrahim &amp; Haajar</div><div class="sc-msg">Welcome to our home! We've been counting down the days. This trip is going to be unforgettable.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">A surprise underneath</span></div></div>
+  <hr class="divider">
+  <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Halal Dinner Tonight</h4><div class="suggest-grid">
+    <div class="suggest-card"><div class="sc-name">Jaan Turkish Cafe <span class="halal-badge">Halal</span></div><div class="sc-type food">Turkish &bull; Auckland CBD</div><div class="sc-desc">Muslim-owned. Kebabs, falafel, grilled meats. Reliable and delicious.</div><a href="https://www.google.com/maps/search/?api=1&query=Jaan+Turkish+Cafe+Auckland" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+    <div class="suggest-card"><div class="sc-name">Lava Dining (Sofitel) <span class="halal-badge">Halal on request</span></div><div class="sc-type food">Fine Dining &bull; Viaduct Harbour</div><div class="sc-desc">Elegant hotel restaurant. Serves halal beef, lamb &amp; chicken &mdash; call ahead to confirm.</div><a href="https://www.google.com/maps/search/?api=1&query=Lava+Dining+Sofitel+Auckland+Viaduct" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+  </div></div>
+  <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
+</div></div></div></div>
 
-    <!-- DAY 2 -->
-    <div class="day-card theme-hobbiton" data-day="2">
-      <div class="day-dot">&#x1F9D9;</div>
-      <div class="card-inner" onclick="toggleCard(this)">
-        <div class="card-header"><span class="card-day-num">02</span><div class="card-header-text"><div class="card-title">Auckland &#x2192; Hobbiton &#x2192; Rotorua</div><div class="card-date">Friday, April 3</div></div><span class="card-expand-icon">&#x25BC;</span></div>
-        <div class="card-body"><div class="card-content">
-          <div class="carousel"><div class="carousel-track">
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Hobbit_holes_reflected_in_water.jpg/1200px-Hobbit_holes_reflected_in_water.jpg" alt="Hobbiton"><div class="slide-caption">Hobbiton Movie Set</div></div>
-            <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1590549123295-71868c623c79?w=1200&h=400&fit=crop" alt="Hobbiton"><div class="slide-caption">Step into Middle-earth</div></div>
-            <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1693887296803-5e726bcf6de9?w=1200&h=400&fit=crop" alt="Rotorua"><div class="slide-caption">Rotorua Hot Springs</div></div>
-          </div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
-          <div class="video-embed" data-id="RHuwQldgKU8"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/RHuwQldgKU8/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Hobbiton in 4K</div></div></div>
-          <div class="weather-strip"><span class="ws-icon">&#x1F324;&#xFE0F;</span><span class="ws-temps"><span class="hi">19&#xB0;C</span> / <span class="lo">9&#xB0;C</span></span><span class="ws-rain">&#x1F327;&#xFE0F; ~40%</span><span class="ws-desc">Cooler inland. Misty farmland at dawn, humid in Rotorua.</span></div>
-          <div class="wear-box"><h4>&#x1F45A; What to Wear</h4><p>Fleece + <strong>waterproof jacket</strong>. <strong>Sturdy shoes</strong> (muddy paths). Don't wear favourites to geothermal areas!</p></div>
-          <div class="detail-row"><span class="icon">&#x1F697;</span><span>Drive to Matamata (~2 hrs)</span></div>
-          <div class="detail-row"><span class="icon">&#x1F9D9;</span><span><strong>Hobbiton Tour</strong> &mdash; 2.5 hrs + drink at The Green Dragon</span></div>
-          <div class="detail-row"><span class="icon">&#x2668;&#xFE0F;</span><span>Evening at <strong>Polynesian Spa</strong> &mdash; 28 hot pools, magical after dark</span></div>
-          <div class="overnight-badge">&#x1F319; Overnight in Rotorua</div>
-          <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">Hobbiton has 44 hobbit holes, and The Green Dragon serves real ale brewed exclusively for the set &mdash; you can't get it anywhere else!</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact underneath</span></div></div>
-          <hr class="divider">
-          <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Where to Eat</h4><div class="suggest-grid">
-            <div class="suggest-card"><div class="sc-name">The Redoubt</div><div class="sc-type food">Lunch &bull; Matamata</div><div class="sc-desc">Post-Hobbiton debrief. Fish &amp; chips, chowder.</div></div>
-            <div class="suggest-card"><div class="sc-name">Ali Baba's</div><div class="sc-type food">Dinner &bull; Rotorua &bull; 100% Halal</div><div class="sc-desc">Tunisian family restaurant since 2004.</div></div>
-          </div></div>
-          <div class="hotel-card"><h4>&#x1F3E8; Newina Rotorua</h4><p><strong>Premium Suite</strong> (Hot Tub) + <strong>Executive Suite</strong> (Mountain View)</p></div>
-          <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span><span class="people-tag tag-haajar">Haajar</span></div>
-        </div></div>
-      </div>
-    </div>
+<!-- DAY 2 -->
+<div class="day-card theme-hobbiton" data-day="2"><div class="day-dot">&#x1F9D9;</div><div class="card-inner" onclick="toggleCard(this)"><div class="card-header"><span class="card-day-num">02</span><div class="card-header-text"><div class="card-title">Auckland &#x2192; Hobbiton &#x2192; Rotorua</div><div class="card-date">Friday, April 3</div></div><span class="card-expand-icon">&#x25BC;</span></div>
+<div class="card-body"><div class="card-content">
+  <div class="carousel"><div class="carousel-track"><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Hobbit_holes_reflected_in_water.jpg/1200px-Hobbit_holes_reflected_in_water.jpg" alt="Hobbiton"><div class="slide-caption">Hobbiton Movie Set</div></div><div class="carousel-slide"><img src="https://images.unsplash.com/photo-1590549123295-71868c623c79?w=1200&h=400&fit=crop" alt="Hobbiton"><div class="slide-caption">Middle-earth</div></div><div class="carousel-slide"><img src="https://images.unsplash.com/photo-1693887296803-5e726bcf6de9?w=1200&h=400&fit=crop" alt="Rotorua"><div class="slide-caption">Rotorua Hot Springs</div></div></div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
+  <div class="video-embed" data-id="RHuwQldgKU8"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/RHuwQldgKU8/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Hobbiton 4K</div></div></div>
+  <div class="weather-strip"><span class="ws-icon">&#x1F324;&#xFE0F;</span><span class="ws-temps"><span class="hi">19&#xB0;C</span> / <span class="lo">9&#xB0;C</span></span><span class="ws-rain">~40%</span><span class="ws-desc">Cooler inland. Misty farmland at dawn, humid Rotorua.</span></div>
+  <div class="wear-box"><h4>&#x1F45A; What to Wear</h4><p>Fleece + <strong>waterproof jacket</strong>. <strong>Sturdy shoes</strong> (muddy paths). Don't wear favourites near geothermal areas!</p></div>
+  <div class="detail-row"><span class="icon">&#x1F697;</span><span>Drive to Matamata (~2 hrs)</span></div>
+  <div class="detail-row"><span class="icon">&#x1F9D9;</span><span><strong>Hobbiton Tour</strong> &mdash; 2.5 hrs + drink at The Green Dragon <span class="cost-tag">$130/adult &bull; kids 0-10 free</span></span></div>
+  <div class="detail-row"><span class="icon">&#x2668;&#xFE0F;</span><span><strong>Polynesian Spa</strong> &mdash; 28 lakefront hot pools <span class="cost-tag">~$30/adult &bull; ~$14/child</span></span></div>
+  <div class="overnight-badge">&#x1F319; Overnight in Rotorua</div>
+  <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">Hobbiton has 44 hobbit holes, and The Green Dragon serves real ale brewed exclusively for the set!</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact</span></div></div>
+  <hr class="divider">
+  <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Halal Food</h4><div class="suggest-grid">
+    <div class="suggest-card"><div class="sc-name">Fez Kebab <span class="halal-badge">Halal</span></div><div class="sc-type food">Lunch &bull; Matamata</div><div class="sc-desc">Halal-certified kebabs &amp; pizza. Only halal option in Matamata.</div><a href="https://www.google.com/maps/search/?api=1&query=Fez+Kebab+Matamata+NZ" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+    <div class="suggest-card"><div class="sc-name">Ali Baba's Tunisian <span class="halal-badge">Halal</span></div><div class="sc-type food">Dinner &bull; Rotorua</div><div class="sc-desc">100% halal. Tunisian family restaurant since 2004. Kebabs, pizzas, lamb.</div><a href="https://www.google.com/maps/search/?api=1&query=Ali+Babas+Tunisian+Cuisine+Rotorua" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+  </div></div>
+  <div class="hotel-card"><h4>&#x1F3E8; Newina Rotorua</h4><p><strong>Premium Suite</strong> (Hot Tub) + <strong>Executive Suite</strong> (Mountain View)</p></div>
+  <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span><span class="people-tag tag-haajar">Haajar</span></div>
+</div></div></div></div>
 
-    <!-- DAY 3 -->
-    <div class="day-card theme-geothermal" data-day="3">
-      <div class="day-dot">&#x1F30B;</div>
-      <div class="card-inner" onclick="toggleCard(this)">
-        <div class="card-header"><span class="card-day-num">03</span><div class="card-header-text"><div class="card-title">Rotorua &#x2192; Auckland</div><div class="card-date">Saturday, April 4</div></div><span class="card-expand-icon">&#x25BC;</span></div>
-        <div class="card-body"><div class="card-content">
-          <div class="carousel"><div class="carousel-track">
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/ChampagnePool-Wai-O-Tapu_rotated_MC.jpg/1200px-ChampagnePool-Wai-O-Tapu_rotated_MC.jpg" alt="Champagne Pool"><div class="slide-caption">Champagne Pool, Wai-O-Tapu</div></div>
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Champagne_Pool_Waiotapu_New_Zealand_%28148846405%29.jpeg/1200px-Champagne_Pool_Waiotapu_New_Zealand_%28148846405%29.jpeg" alt="Wai-O-Tapu"><div class="slide-caption">Geothermal Wonderland</div></div>
-          </div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
-          <div class="video-embed" data-id="_xR_OQqZoJo"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/_xR_OQqZoJo/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Wai-O-Tapu Drone 4K</div></div></div>
-          <div class="weather-strip"><span class="ws-icon">&#x1F32B;&#xFE0F;</span><span class="ws-temps"><span class="hi">18&#xB0;C</span> / <span class="lo">9&#xB0;C</span></span><span class="ws-rain">~37%</span><span class="ws-desc">Misty mornings, high humidity. Overcast early, clearing midday.</span></div>
-          <div class="detail-row"><span class="icon">&#x1F30B;</span><span><strong>Wai-O-Tapu</strong> &mdash; NZ$45 adult, NZ$15 child</span></div>
-          <div class="detail-row"><span class="icon">&#x1F4A5;</span><span><strong>Lady Knox Geyser</strong> erupts 10:15 AM &mdash; arrive by 9:45!</span></div>
-          <div class="detail-row"><span class="icon">&#x1F697;</span><span>Drive back to Auckland (~3 hrs)</span></div>
-          <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">The Champagne Pool is 65 metres deep and 74&#xB0;C at the bottom! The "champagne" bubbles are CO2 gas from deep underground.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact underneath</span></div></div>
-          <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span><span class="people-tag tag-haajar">Haajar</span></div>
-        </div></div>
-      </div>
-    </div>
+<!-- DAY 3: Rotorua → Taupo (UPDATED) -->
+<div class="day-card theme-geothermal" data-day="3"><div class="day-dot">&#x1F30B;</div><div class="card-inner" onclick="toggleCard(this)"><div class="card-header"><span class="card-day-num">03</span><div class="card-header-text"><div class="card-title">Rotorua &#x2192; Taup&#x14D;</div><div class="card-date">Saturday, April 4</div></div><span class="card-expand-icon">&#x25BC;</span></div>
+<div class="card-body"><div class="card-content">
+  <div class="carousel"><div class="carousel-track"><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/ChampagnePool-Wai-O-Tapu_rotated_MC.jpg/1200px-ChampagnePool-Wai-O-Tapu_rotated_MC.jpg" alt="Champagne Pool"><div class="slide-caption">Champagne Pool, Wai-O-Tapu</div></div><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Huka_Falls.jpg/1200px-Huka_Falls.jpg" alt="Huka Falls"><div class="slide-caption">Huka Falls, Taup&#x14D;</div></div></div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
+  <div class="video-embed" data-id="_xR_OQqZoJo"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/_xR_OQqZoJo/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Wai-O-Tapu Drone 4K</div></div></div>
+  <div class="weather-strip"><span class="ws-icon">&#x1F32B;&#xFE0F;</span><span class="ws-temps"><span class="hi">18&#xB0;C</span> / <span class="lo">8&#xB0;C</span></span><span class="ws-rain">~35%</span><span class="ws-desc">Misty Rotorua morning, cooling as you head to Taup&#x14D; (370m elevation).</span></div>
+  <div class="wear-box"><h4>&#x1F45A; What to Wear</h4><p>Layers! Long-sleeve + fleece + waterproof shell. <strong>Grippy shoes</strong> for boardwalks. Beanie for Taup&#x14D; evening.</p></div>
+  <div class="detail-row"><span class="icon">&#x1F30B;</span><span><strong>Wai-O-Tapu</strong> Thermal Wonderland <span class="cost-tag">$45/adult &bull; $15/child &bull; Family $105</span></span></div>
+  <div class="detail-row"><span class="icon">&#x1F4A5;</span><span><strong>Lady Knox Geyser</strong> erupts 10:15 AM &mdash; arrive by 9:45! <span class="cost-tag free">Included</span></span></div>
+  <div class="detail-row"><span class="icon">&#x1F697;</span><span>Drive from Rotorua to <strong>Taup&#x14D;</strong> (~1 hr)</span></div>
+  <div class="detail-row"><span class="icon">&#x1F4A7;</span><span><strong>Huka Falls</strong> &mdash; 220,000 litres/sec of turquoise thunder <span class="cost-tag free">Free</span></span></div>
+  <div class="detail-row"><span class="icon">&#x1F3DE;&#xFE0F;</span><span>Afternoon <strong>Great Lake Walkway</strong> along Lake Taup&#x14D; <span class="cost-tag free">Free</span></span></div>
+  <div class="overnight-badge">&#x1F319; Overnight in Taup&#x14D; or Rotorua &mdash; Airbnb</div>
+  <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">The Champagne Pool is 65m deep and 74&#xB0;C at the bottom! The bubbles are CO2 from deep underground.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact</span></div></div>
+  <hr class="divider">
+  <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Halal Food</h4><div class="suggest-grid">
+    <div class="suggest-card"><div class="sc-name">Indian Star <span class="halal-badge">Halal</span></div><div class="sc-type food">Brunch &bull; Rotorua</div><div class="sc-desc">Halal-certified Indian. Curries, tandoori, vegetarian options.</div><a href="https://www.google.com/maps/search/?api=1&query=Indian+Star+Restaurant+Rotorua" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+    <div class="suggest-card"><div class="sc-name">Kebab Turka <span class="halal-badge">Halal</span></div><div class="sc-type food">Dinner &bull; Taup&#x14D;</div><div class="sc-desc">Turkish halal kebabs, burgers, loaded fries. Casual and reliable.</div><a href="https://www.google.com/maps/search/?api=1&query=Kebab+Turka+Taupo+NZ" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+    <div class="suggest-card"><div class="sc-name">Indian Affair <span class="halal-badge">Halal</span></div><div class="sc-type food">Dinner alt &bull; Taup&#x14D;</div><div class="sc-desc">Award-winning Indian. Call ahead to confirm halal status.</div><a href="https://www.google.com/maps/search/?api=1&query=Indian+Affair+Taupo+NZ" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+  </div></div>
+  <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span><span class="people-tag tag-haajar">Haajar</span></div>
+</div></div></div></div>
 
-    <!-- DAY 4 -->
-    <div class="day-card theme-taupo" data-day="4">
-      <div class="day-dot">&#x1F4A7;</div>
-      <div class="card-inner" onclick="toggleCard(this)">
-        <div class="card-header"><span class="card-day-num">04</span><div class="card-header-text"><div class="card-title">Taup&#x14D; Adventure + Overnight</div><div class="card-date">Sunday, April 5</div></div><span class="card-expand-icon">&#x25BC;</span></div>
-        <div class="card-body"><div class="card-content">
-          <div class="carousel"><div class="carousel-track">
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Huka_Falls.jpg/1200px-Huka_Falls.jpg" alt="Huka Falls"><div class="slide-caption">Huka Falls &mdash; 220,000 litres/sec!</div></div>
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Lake_Taupo_06.jpg/1200px-Lake_Taupo_06.jpg" alt="Lake Taupo"><div class="slide-caption">Lake Taup&#x14D;</div></div>
-            <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1604038484630-3c95cf1459a0?w=1200&h=400&fit=crop" alt="Taupo"><div class="slide-caption">Volcanic landscape meets crystal water</div></div>
-          </div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
-          <div class="video-embed" data-id="B09_7j7_0LI"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/B09_7j7_0LI/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Huka Falls Drone</div></div></div>
-          <div class="weather-strip"><span class="ws-icon">&#x1F343;</span><span class="ws-temps"><span class="hi">17&#xB0;C</span> / <span class="lo">7&#xB0;C</span></span><span class="ws-rain">~33%</span><span class="ws-desc">Cooler inland. Crisp mornings, lake wind adds chill.</span></div>
-          <div class="wear-box"><h4>&#x1F45A; What to Wear</h4><p><strong>Thermals</strong>, fleece, windbreaker. Long trousers, warm socks, <strong>beanie</strong> for lakeside.</p></div>
-          <div class="detail-row"><span class="icon">&#x1F697;</span><span>Drive to Taup&#x14D; (~3.5 hrs)</span></div>
-          <div class="detail-row"><span class="icon">&#x1F4A7;</span><span><strong>Huka Falls</strong> &mdash; turquoise thunder</span></div>
-          <div class="detail-row"><span class="icon">&#x1F3DE;&#xFE0F;</span><span><strong>Great Lake Walkway</strong></span></div>
-          <div class="overnight-badge">&#x1F319; Overnight Taup&#x14D;/Rotorua Airbnb</div>
-          <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; From Ibrahim &amp; Haajar</div><div class="sc-msg">Mama, the drive through the countryside is going to take your breath away. Rolling green hills as far as the eye can see.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">A message awaits</span></div></div>
-          <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">Lake Taup&#x14D; is roughly the size of Singapore! Formed by a supervolcano ~26,500 years ago.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact underneath</span></div></div>
-          <hr class="divider">
-          <div class="suggest-section"><h4>&#x2B50; Things to Do</h4><div class="suggest-grid">
-            <div class="suggest-card"><div class="sc-name">M&#x101;ori Rock Carvings</div><div class="sc-type activity">~NZ$59 &bull; 90 min cruise</div><div class="sc-desc">14m carvings only accessible by water.</div></div>
-            <div class="suggest-card"><div class="sc-name">Craters of the Moon</div><div class="sc-type activity">NZ$10 &bull; 40 min &bull; No booking</div><div class="sc-desc">Lunar landscape, steam vents, easy boardwalk.</div></div>
-            <div class="suggest-card"><div class="sc-name">Edgewater Restaurant</div><div class="sc-type food">Lakefront &bull; Book ahead</div><div class="sc-desc">Premier lakefront dining.</div></div>
-            <div class="suggest-card"><div class="sc-name">Dixie Browns</div><div class="sc-type food">Family-friendly &bull; Mountain views</div><div class="sc-desc">Relaxed vibe on the lake shore.</div></div>
-          </div></div>
-          <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span><span class="people-tag tag-haajar">Haajar</span></div>
-        </div></div>
-      </div>
-    </div>
+<!-- DAY 4: Taupo → Auckland (UPDATED) -->
+<div class="day-card theme-taupo" data-day="4"><div class="day-dot">&#x1F4A7;</div><div class="card-inner" onclick="toggleCard(this)"><div class="card-header"><span class="card-day-num">04</span><div class="card-header-text"><div class="card-title">Taup&#x14D; Morning &#x2192; Auckland</div><div class="card-date">Sunday, April 5</div></div><span class="card-expand-icon">&#x25BC;</span></div>
+<div class="card-body"><div class="card-content">
+  <div class="carousel"><div class="carousel-track"><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Lake_Taupo_06.jpg/1200px-Lake_Taupo_06.jpg" alt="Lake Taupo"><div class="slide-caption">Lake Taup&#x14D; &mdash; NZ's largest</div></div><div class="carousel-slide"><img src="https://images.unsplash.com/photo-1604038484630-3c95cf1459a0?w=1200&h=400&fit=crop" alt="Taupo"><div class="slide-caption">Volcanic landscape</div></div></div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
+  <div class="video-embed" data-id="B09_7j7_0LI"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/B09_7j7_0LI/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Huka Falls Drone</div></div></div>
+  <div class="weather-strip"><span class="ws-icon">&#x1F343;</span><span class="ws-temps"><span class="hi">17&#xB0;C</span> / <span class="lo">7&#xB0;C</span></span><span class="ws-rain">~33%</span><span class="ws-desc">Crisp Taup&#x14D; morning. Lake wind adds chill. Warming up as you drive back to Auckland.</span></div>
+  <div class="detail-row"><span class="icon">&#x1F6F3;&#xFE0F;</span><span><strong>M&#x101;ori Rock Carvings Cruise</strong> &mdash; 90 min on the lake <span class="cost-tag">$59/adult &bull; $20/child</span></span></div>
+  <div class="detail-row"><span class="icon">&#x1F30B;</span><span><strong>Craters of the Moon</strong> &mdash; lunar landscape walk <span class="cost-tag">$10/adult &bull; $5/child</span></span></div>
+  <div class="detail-row"><span class="icon">&#x1F697;</span><span>Drive back to <strong>Auckland</strong> (~3.5 hrs)</span></div>
+  <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; From Ibrahim &amp; Haajar</div><div class="sc-msg">Mama, the drive through the countryside is going to take your breath away. Rolling green hills as far as the eye can see.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">A message awaits</span></div></div>
+  <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">Lake Taup&#x14D; is roughly the size of Singapore! Formed by a supervolcano ~26,500 years ago.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact</span></div></div>
+  <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span><span class="people-tag tag-haajar">Haajar</span></div>
+</div></div></div></div>
 
-    <!-- DAY 5 -->
-    <div class="day-card theme-waiheke" data-day="5">
-      <div class="day-dot"><span class="boat-float">&#x26F5;</span></div>
-      <div class="card-inner" onclick="toggleCard(this)">
-        <div class="card-header"><span class="card-day-num">05</span><div class="card-header-text"><div class="card-title">Waiheke Island Day Trip</div><div class="card-date">Monday, April 6</div></div><span class="card-expand-icon">&#x25BC;</span></div>
-        <div class="card-body"><div class="card-content">
-          <div class="carousel"><div class="carousel-track">
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Palm_beach_on_Waiheke_Island.jpg/1200px-Palm_beach_on_Waiheke_Island.jpg" alt="Palm Beach"><div class="slide-caption">Palm Beach, Waiheke</div></div>
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Waiheke_Island_Oneroa_Beach.jpg/1200px-Waiheke_Island_Oneroa_Beach.jpg" alt="Oneroa"><div class="slide-caption">Oneroa Beach &amp; Village</div></div>
-          </div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
-          <div class="video-embed" data-id="fLRMvUGqEUs"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/fLRMvUGqEUs/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Waiheke Island Drone 4K</div></div></div>
-          <div class="weather-strip"><span class="ws-icon">&#x1F31E;</span><span class="ws-temps"><span class="hi">20&#xB0;C</span> / <span class="lo">15&#xB0;C</span></span><span class="ws-rain">~43%</span><span class="ws-desc">Milder than Auckland. Sunshine &amp; passing showers.</span></div>
-          <div class="detail-row"><span class="icon">&#x1F697;</span><span>Morning drive back from Taup&#x14D;</span></div>
-          <div class="detail-row"><span class="icon">&#x26F4;&#xFE0F;</span><span><strong>Fullers Ferry</strong> to Waiheke (~40 min)</span></div>
-          <div class="detail-row"><span class="icon">&#x1F3D6;&#xFE0F;</span><span>Beaches, vineyards, island lunch</span></div>
-          <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">Waiheke has 30+ vineyards on an island just 19 km long! It's called "The Island of Wine."</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact underneath</span></div></div>
-          <hr class="divider">
-          <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Island Lunch</h4><div class="suggest-grid">
-            <div class="suggest-card"><div class="sc-name">Tantalus Estate</div><div class="sc-type food">Vineyard</div><div class="sc-desc">Award-winning wines, breathtaking setting.</div></div>
-            <div class="suggest-card"><div class="sc-name">The Heke</div><div class="sc-type food">Casual</div><div class="sc-desc">Wood-fired pizzas, famous smash burger.</div></div>
-          </div></div>
-          <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span><span class="people-tag tag-haajar">Haajar</span></div>
-        </div></div>
-      </div>
-    </div>
+<!-- DAY 5: Waiheke -->
+<div class="day-card theme-waiheke" data-day="5"><div class="day-dot"><span class="boat-float">&#x26F5;</span></div><div class="card-inner" onclick="toggleCard(this)"><div class="card-header"><span class="card-day-num">05</span><div class="card-header-text"><div class="card-title">Waiheke Island Day Trip</div><div class="card-date">Monday, April 6</div></div><span class="card-expand-icon">&#x25BC;</span></div>
+<div class="card-body"><div class="card-content">
+  <div class="carousel"><div class="carousel-track"><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Palm_beach_on_Waiheke_Island.jpg/1200px-Palm_beach_on_Waiheke_Island.jpg" alt="Palm Beach"><div class="slide-caption">Palm Beach, Waiheke</div></div><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Waiheke_Island_Oneroa_Beach.jpg/1200px-Waiheke_Island_Oneroa_Beach.jpg" alt="Oneroa"><div class="slide-caption">Oneroa Beach</div></div></div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
+  <div class="video-embed" data-id="fLRMvUGqEUs"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/fLRMvUGqEUs/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Waiheke Drone 4K</div></div></div>
+  <div class="weather-strip"><span class="ws-icon">&#x1F31E;</span><span class="ws-temps"><span class="hi">20&#xB0;C</span> / <span class="lo">15&#xB0;C</span></span><span class="ws-rain">~43%</span><span class="ws-desc">Milder than Auckland. Sunshine &amp; passing showers.</span></div>
+  <div class="detail-row"><span class="icon">&#x26F4;&#xFE0F;</span><span><strong>Fullers Ferry</strong> to Waiheke (~40 min) <span class="cost-tag">~$46-59/adult return</span></span></div>
+  <div class="detail-row"><span class="icon">&#x1F3D6;&#xFE0F;</span><span>Beaches, Art Trail walk, vineyards <span class="cost-tag free">Free</span></span></div>
+  <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">Waiheke has 30+ vineyards on an island just 19 km long! It's called "The Island of Wine."</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact</span></div></div>
+  <hr class="divider">
+  <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Halal Food on Waiheke</h4><div class="suggest-grid">
+    <div class="suggest-card"><div class="sc-name">Ajadz Indian Cuisine</div><div class="sc-type food">Indian &bull; Waiheke Island</div><div class="sc-desc">Indian restaurant on the island. <strong>Call ahead to confirm halal status</strong> (09 372 2588).</div><a href="https://www.google.com/maps/search/?api=1&query=Ajadz+Indian+Cuisine+Waiheke+Island" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+    <div class="suggest-card"><div class="sc-name">Seafood (naturally halal)</div><div class="sc-type tip">Fish &amp; chips / seafood restaurants</div><div class="sc-desc">Fish, prawns &amp; shellfish are naturally halal. Confirm no alcohol in cooking. Or <strong>pack halal food from Auckland</strong> for a beach picnic!</div></div>
+  </div></div>
+  <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span><span class="people-tag tag-haajar">Haajar</span></div>
+</div></div></div></div>
 
-    <!-- DAY 6 -->
-    <div class="day-card theme-queenstown" data-day="6">
-      <div class="day-dot">&#x1F3D4;&#xFE0F;</div>
-      <div class="card-inner" onclick="toggleCard(this)">
-        <div class="card-header"><span class="card-day-num">06</span><div class="card-header-text"><div class="card-title">Auckland &#x2192; Queenstown</div><div class="card-date">Tuesday, April 7</div></div><span class="card-expand-icon">&#x25BC;</span></div>
-        <div class="card-body"><div class="card-content">
-          <div class="carousel"><div class="carousel-track">
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/The_Remarkables_from_Queenstown%2C_New_Zealand_08.jpg/1200px-The_Remarkables_from_Queenstown%2C_New_Zealand_08.jpg" alt="Remarkables"><div class="slide-caption">The Remarkables</div></div>
-            <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1501045337096-542a73dafa4f?w=1200&h=400&fit=crop" alt="Lake Wakatipu"><div class="slide-caption">Lake Wakatipu</div></div>
-            <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1519871401754-8578d6dff38d?w=1200&h=400&fit=crop" alt="Queenstown"><div class="slide-caption">Queenstown from above</div></div>
-          </div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
-          <div class="video-embed" data-id="6gGFkDSUehs"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/6gGFkDSUehs/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; The Remarkables from Above</div></div></div>
-          <div class="weather-strip"><span class="ws-icon">&#x2744;&#xFE0F;</span><span class="ws-temps"><span class="hi">12&#xB0;C</span> / <span class="lo">3&#xB0;C</span></span><span class="ws-rain">~37%</span><span class="ws-desc"><strong>Much colder!</strong> Stunning autumn colours, near-freezing mornings. Snow on peaks!</span></div>
-          <div class="wear-box"><h4>&#x1F45A; What to Wear</h4><p><strong>Winter layers!</strong> Thermals, fleece, <strong>insulated jacket, beanie, gloves, scarf.</strong> Down puffer ideal. Warm boots.</p></div>
-          <div class="detail-row"><span class="icon">&#x2708;&#xFE0F;</span><span>Flight <strong>7:10&#x2192;9:05 AM</strong> over the Southern Alps!</span></div>
-          <div class="detail-row"><span class="icon">&#x1F6B6;</span><span><strong>Queenstown Gardens</strong> lakeside walk</span></div>
-          <div class="overnight-badge">&#x1F319; Night 1 Queenstown</div>
-          <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; For Yasmeen</div><div class="sc-msg">Get your camera ready &mdash; Queenstown is going to blow your mind! The mountains, the lake, the autumn colours... you've never seen anything like this.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">A special message</span></div></div>
-          <hr class="divider">
-          <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Dinner</h4><div class="suggest-grid">
-            <div class="suggest-card"><div class="sc-name">Fergburger</div><div class="sc-type food">Iconic Burgers</div><div class="sc-desc">NZ's most famous burger joint. A rite of passage!</div></div>
-            <div class="suggest-card"><div class="sc-name">Patagonia Chocolaterie</div><div class="sc-type tip">Legendary Dessert</div><div class="sc-desc">Best chocolate &amp; hot chocolate in Queenstown.</div></div>
-          </div></div>
-          <div class="hotel-card"><h4>&#x1F3E8; Rendez Vous Heritage</h4><p>Apartment, 1 Bedroom, Lake View</p></div>
-          <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
-        </div></div>
-      </div>
-    </div>
+<!-- DAY 6: Queenstown -->
+<div class="day-card theme-queenstown" data-day="6"><div class="day-dot">&#x1F3D4;&#xFE0F;</div><div class="card-inner" onclick="toggleCard(this)"><div class="card-header"><span class="card-day-num">06</span><div class="card-header-text"><div class="card-title">Auckland &#x2192; Queenstown</div><div class="card-date">Tuesday, April 7</div></div><span class="card-expand-icon">&#x25BC;</span></div>
+<div class="card-body"><div class="card-content">
+  <div class="carousel"><div class="carousel-track"><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/The_Remarkables_from_Queenstown%2C_New_Zealand_08.jpg/1200px-The_Remarkables_from_Queenstown%2C_New_Zealand_08.jpg" alt="Remarkables"><div class="slide-caption">The Remarkables</div></div><div class="carousel-slide"><img src="https://images.unsplash.com/photo-1501045337096-542a73dafa4f?w=1200&h=400&fit=crop" alt="Wakatipu"><div class="slide-caption">Lake Wakatipu</div></div><div class="carousel-slide"><img src="https://images.unsplash.com/photo-1519871401754-8578d6dff38d?w=1200&h=400&fit=crop" alt="QT"><div class="slide-caption">Queenstown from above</div></div></div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
+  <div class="video-embed" data-id="6gGFkDSUehs"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/6gGFkDSUehs/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; The Remarkables from Above</div></div></div>
+  <div class="weather-strip"><span class="ws-icon">&#x2744;&#xFE0F;</span><span class="ws-temps"><span class="hi">12&#xB0;C</span> / <span class="lo">3&#xB0;C</span></span><span class="ws-rain">~37%</span><span class="ws-desc"><strong>Much colder!</strong> Near-freezing mornings, snow on peaks. Stunning autumn colours.</span></div>
+  <div class="wear-box"><h4>&#x1F45A; What to Wear</h4><p><strong>Winter layers!</strong> Thermals, fleece, <strong>insulated jacket, beanie, gloves, scarf.</strong> Down puffer ideal.</p></div>
+  <div class="detail-row"><span class="icon">&#x2708;&#xFE0F;</span><span>Flight <strong>7:10&#x2192;9:05 AM</strong> <span class="cost-tag">~$100-200/person one-way</span></span></div>
+  <div class="detail-row"><span class="icon">&#x1F6B6;</span><span><strong>Queenstown Gardens</strong> lakeside walk <span class="cost-tag free">Free</span></span></div>
+  <div class="overnight-badge">&#x1F319; Night 1 Queenstown</div>
+  <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; For Yasmeen</div><div class="sc-msg">Get your camera ready &mdash; Queenstown is going to blow your mind! The mountains, the lake, the autumn colours... you've never seen anything like this.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Special message</span></div></div>
+  <hr class="divider">
+  <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Halal Dinner</h4><div class="suggest-grid">
+    <div class="suggest-card"><div class="sc-name">The Komunal Cafe <span class="halal-badge">Halal Certified</span></div><div class="sc-type food">Malaysian &bull; Frankton (~10 min)</div><div class="sc-desc">Muslim-owned. Nasi Lemak, Rendang, Teh Tarik. Prayer room on-site. 4.8/5 Google.</div><a href="https://www.google.com/maps/search/?api=1&query=The+Komunal+Cafe+NZ+Queenstown" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+    <div class="suggest-card"><div class="sc-name">Boliwood Indian <span class="halal-badge">Halal</span></div><div class="sc-type food">Indian &bull; Shotover St</div><div class="sc-desc">Popular halal Indian. Great curries and tandoori. Two locations.</div><a href="https://www.google.com/maps/search/?api=1&query=Boliwood+Indian+Restaurant+Queenstown" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+  </div></div>
+  <div class="hotel-card"><h4>&#x1F3E8; Rendez Vous Heritage</h4><p>Apartment, 1 Bedroom, Lake View</p></div>
+  <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
+</div></div></div></div>
 
-    <!-- DAY 7 -->
-    <div class="day-card theme-milford" data-day="7">
-      <div class="day-dot">&#x1F30A;</div>
-      <div class="card-inner" onclick="toggleCard(this)">
-        <div class="card-header"><span class="card-day-num">07</span><div class="card-header-text"><div class="card-title">Milford Sound Day Trip</div><div class="card-date">Wednesday, April 8</div></div><span class="card-expand-icon">&#x25BC;</span></div>
-        <div class="card-body"><div class="card-content">
-          <div class="carousel"><div class="carousel-track">
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Cruising_on_Milford_Sound%3B_2014.jpg/1200px-Cruising_on_Milford_Sound%3B_2014.jpg" alt="Milford"><div class="slide-caption">Cruising Milford Sound</div></div>
-            <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1523819088009-c3ecf1e34000?w=1200&h=400&fit=crop" alt="Mitre Peak"><div class="slide-caption">Mitre Peak</div></div>
-            <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1660112360442-ec551cf15e4b?w=1200&h=400&fit=crop" alt="Milford"><div class="slide-caption">Waterfalls into the fjord</div></div>
-          </div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
-          <div class="video-embed" data-id="RZifjuBTX_o"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/RZifjuBTX_o/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Milford Sound Drone</div></div></div>
-          <div class="weather-strip"><span class="ws-icon">&#x1F327;&#xFE0F;</span><span class="ws-temps"><span class="hi">14&#xB0;C</span> / <span class="lo">7&#xB0;C</span></span><span class="ws-rain">~50% &bull; 548mm in April!</span><span class="ws-desc"><strong>Wettest place on Earth!</strong> But rain = hundreds of temporary waterfalls. MORE spectacular in rain!</span></div>
-          <div class="wear-box"><h4>&#x1F45A; IMPORTANT!</h4><p><strong>Full waterproofs!</strong> Jacket + over-trousers + waterproof boots. <strong>Dry bags</strong> for electronics. Pack <strong>dry change of clothes.</strong></p></div>
-          <div class="detail-row"><span class="icon">&#x1F68C;</span><span>Coach pickup ~7 AM</span></div>
-          <div class="detail-row"><span class="icon">&#x1F6F3;&#xFE0F;</span><span><strong>Milford Sound cruise</strong> &mdash; Mitre Peak, waterfalls, dolphins &amp; seals!</span></div>
-          <div class="detail-row"><span class="icon">&#x1F303;</span><span>Return ~7-8 PM</span></div>
-          <div class="overnight-badge">&#x1F319; Night 2 Queenstown</div>
-          <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">Milford Sound is technically a fjord! Captain Cook named it wrong. Mitre Peak rises 1,692m vertically from the water.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact underneath</span></div></div>
-          <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; From Ibrahim &amp; Haajar</div><div class="sc-msg">This is going to be the most incredible thing you've ever seen. When Mitre Peak appears through the mist... you'll understand why people fly across the world for this.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">A special message</span></div></div>
-          <hr class="divider">
-          <div class="suggest-section"><h4>&#x1F6F3;&#xFE0F; Which Cruise</h4><div class="suggest-grid">
-            <div class="suggest-card"><div class="sc-name">RealNZ Signature</div><div class="sc-type activity">~NZ$130-285 &bull; Book ahead!</div><div class="sc-desc">93% recommended. Coach + cruise package.</div></div>
-            <div class="suggest-card"><div class="sc-name">Cruise Milford</div><div class="sc-type activity">Boutique &bull; Max 80 guests</div><div class="sc-desc">Intimate. Champagne &amp; snacks. Closer to waterfalls.</div></div>
-          </div></div>
-          <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
-        </div></div>
-      </div>
-    </div>
+<!-- DAY 7: Milford -->
+<div class="day-card theme-milford" data-day="7"><div class="day-dot">&#x1F30A;</div><div class="card-inner" onclick="toggleCard(this)"><div class="card-header"><span class="card-day-num">07</span><div class="card-header-text"><div class="card-title">Milford Sound Day Trip</div><div class="card-date">Wednesday, April 8</div></div><span class="card-expand-icon">&#x25BC;</span></div>
+<div class="card-body"><div class="card-content">
+  <div class="carousel"><div class="carousel-track"><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Cruising_on_Milford_Sound%3B_2014.jpg/1200px-Cruising_on_Milford_Sound%3B_2014.jpg" alt="Milford"><div class="slide-caption">Cruising Milford Sound</div></div><div class="carousel-slide"><img src="https://images.unsplash.com/photo-1523819088009-c3ecf1e34000?w=1200&h=400&fit=crop" alt="Mitre Peak"><div class="slide-caption">Mitre Peak</div></div><div class="carousel-slide"><img src="https://images.unsplash.com/photo-1660112360442-ec551cf15e4b?w=1200&h=400&fit=crop" alt="Milford"><div class="slide-caption">Waterfalls into the fjord</div></div></div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
+  <div class="video-embed" data-id="RZifjuBTX_o"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/RZifjuBTX_o/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Milford Sound Drone</div></div></div>
+  <div class="weather-strip"><span class="ws-icon">&#x1F327;&#xFE0F;</span><span class="ws-temps"><span class="hi">14&#xB0;C</span> / <span class="lo">7&#xB0;C</span></span><span class="ws-rain">~50% &bull; 548mm/month!</span><span class="ws-desc"><strong>Wettest place on Earth!</strong> Rain = hundreds of temporary waterfalls. MORE spectacular!</span></div>
+  <div class="wear-box"><h4>&#x1F45A; IMPORTANT!</h4><p><strong>Full waterproofs!</strong> Jacket + over-trousers + waterproof boots. <strong>Dry bags</strong> for electronics. Pack <strong>dry change of clothes.</strong></p></div>
+  <div class="detail-row"><span class="icon">&#x1F68C;</span><span>Coach pickup ~7 AM from Queenstown</span></div>
+  <div class="detail-row"><span class="icon">&#x1F6F3;&#xFE0F;</span><span><strong>RealNZ Coach + Cruise</strong> &mdash; all day <span class="cost-tag">from $278/adult &bull; $172/child</span></span></div>
+  <div class="detail-row"><span class="icon">&#x1F303;</span><span>Return ~7-8 PM</span></div>
+  <div class="overnight-badge">&#x1F319; Night 2 Queenstown</div>
+  <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">Milford Sound is technically a fjord! Captain Cook named it wrong. Mitre Peak rises 1,692m vertically from the water.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact</span></div></div>
+  <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; From Ibrahim &amp; Haajar</div><div class="sc-msg">This is going to be the most incredible thing you've ever seen. When Mitre Peak appears through the mist... you'll understand.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Special message</span></div></div>
+  <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
+</div></div></div></div>
 
-    <!-- DAY 8 -->
-    <div class="day-card theme-return" data-day="8">
-      <div class="day-dot">&#x1F6A0;</div>
-      <div class="card-inner" onclick="toggleCard(this)">
-        <div class="card-header"><span class="card-day-num">08</span><div class="card-header-text"><div class="card-title">Queenstown &#x2192; Auckland</div><div class="card-date">Thursday, April 9</div></div><span class="card-expand-icon">&#x25BC;</span></div>
-        <div class="card-body"><div class="card-content">
-          <div class="carousel"><div class="carousel-track">
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Queenstown_view_Skyline_Gondola_Deck.jpg/1200px-Queenstown_view_Skyline_Gondola_Deck.jpg" alt="Gondola"><div class="slide-caption">View from Skyline Gondola</div></div>
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Queenstown_and_Lake_Wakatipu.JPG/1200px-Queenstown_and_Lake_Wakatipu.JPG" alt="Queenstown"><div class="slide-caption">Queenstown &amp; Lake Wakatipu</div></div>
-          </div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
-          <div class="video-embed" data-id="30SbSo8SRbY"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/30SbSo8SRbY/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Skyline Gondola &amp; Luge</div></div></div>
-          <div class="detail-row"><span class="icon">&#x1F6B6;</span><span>Lakeside walk &amp; brunch</span></div>
-          <div class="detail-row"><span class="icon">&#x1F6A0;</span><span><strong>Skyline Gondola + Luge</strong> (Family ~NZ$179)</span></div>
-          <div class="detail-row"><span class="icon">&#x2708;&#xFE0F;</span><span>Flight <strong>5:30&#x2192;7:20 PM</strong></span></div>
-          <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">The TSS Earnslaw has steamed across Lake Wakatipu since 1912! One of the last coal-fired steamships in the world.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact underneath</span></div></div>
-          <hr class="divider">
-          <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Brunch</h4><div class="suggest-grid">
-            <div class="suggest-card"><div class="sc-name">Bespoke Kitchen</div><div class="sc-type food">Award-winning</div><div class="sc-desc">Blackberry spelt pancakes, vegan benedict.</div></div>
-            <div class="suggest-card"><div class="sc-name">Yonder</div><div class="sc-type food">"Best coffee in QT"</div><div class="sc-desc">Passionfruit cheesecake French toast.</div></div>
-          </div></div>
-          <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
-        </div></div>
-      </div>
-    </div>
+<!-- DAY 8 -->
+<div class="day-card theme-return" data-day="8"><div class="day-dot">&#x1F6A0;</div><div class="card-inner" onclick="toggleCard(this)"><div class="card-header"><span class="card-day-num">08</span><div class="card-header-text"><div class="card-title">Queenstown &#x2192; Auckland</div><div class="card-date">Thursday, April 9</div></div><span class="card-expand-icon">&#x25BC;</span></div>
+<div class="card-body"><div class="card-content">
+  <div class="carousel"><div class="carousel-track"><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Queenstown_view_Skyline_Gondola_Deck.jpg/1200px-Queenstown_view_Skyline_Gondola_Deck.jpg" alt="Gondola"><div class="slide-caption">Skyline Gondola view</div></div><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Queenstown_and_Lake_Wakatipu.JPG/1200px-Queenstown_and_Lake_Wakatipu.JPG" alt="QT"><div class="slide-caption">Lake Wakatipu</div></div></div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
+  <div class="video-embed" data-id="30SbSo8SRbY"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/30SbSo8SRbY/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Skyline Gondola &amp; Luge</div></div></div>
+  <div class="detail-row"><span class="icon">&#x1F6A0;</span><span><strong>Skyline Gondola + Luge</strong> <span class="cost-tag">Family of 4: $179 &bull; +Luge: $269</span></span></div>
+  <div class="detail-row"><span class="icon">&#x1F6A2;</span><span>Optional: <strong>TSS Earnslaw</strong> 1912 steamship <span class="cost-tag">$155/adult &bull; $78/child</span></span></div>
+  <div class="detail-row"><span class="icon">&#x2708;&#xFE0F;</span><span>Flight <strong>5:30&#x2192;7:20 PM</strong></span></div>
+  <div class="scratch-card"><div class="scratch-content funfact"><div class="sc-label">&#x1F4A1; Fun Fact</div><div class="sc-msg">The TSS Earnslaw has steamed across Lake Wakatipu since 1912! One of the last coal-fired steamships in the world.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">Fun fact</span></div></div>
+  <hr class="divider">
+  <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Halal Brunch</h4><div class="suggest-grid">
+    <div class="suggest-card"><div class="sc-name">The Komunal Cafe <span class="halal-badge">Halal Certified</span></div><div class="sc-type food">Malaysian &bull; Opens 12pm</div><div class="sc-desc">Late brunch option. Nasi Lemak, Rendang. Worth the short drive to Frankton.</div><a href="https://www.google.com/maps/search/?api=1&query=The+Komunal+Cafe+NZ+Queenstown" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+    <div class="suggest-card"><div class="sc-name">Veggie brunch at any cafe</div><div class="sc-type tip">Safe option</div><div class="sc-desc">Eggs, avocado toast, pancakes, fruit &mdash; skip bacon/sausage. Most QT cafes have great veggie options.</div></div>
+  </div></div>
+  <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
+</div></div></div></div>
 
-    <!-- DAY 9 -->
-    <div class="day-card theme-buffer" data-day="9">
-      <div class="day-dot">&#x1F333;</div>
-      <div class="card-inner" onclick="toggleCard(this)">
-        <div class="card-header"><span class="card-day-num">09</span><div class="card-header-text"><div class="card-title">Auckland Scenic Buffer Day</div><div class="card-date">Friday, April 10</div></div><span class="card-expand-icon">&#x25BC;</span></div>
-        <div class="card-body"><div class="card-content">
-          <div class="carousel"><div class="carousel-track">
-            <div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Mount_Eden_crater_with_Auckland_CBD_and_Rangitoto_skyline.jpg/1200px-Mount_Eden_crater_with_Auckland_CBD_and_Rangitoto_skyline.jpg" alt="Mt Eden"><div class="slide-caption">Mount Eden &amp; Auckland</div></div>
-            <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1591169626803-84f3ceed5917?w=1200&h=400&fit=crop" alt="Auckland"><div class="slide-caption">Auckland from the summit</div></div>
-          </div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
-          <div class="video-embed" data-id="1PeSJ2id9aY"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/1PeSJ2id9aY/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Mt Eden Crater Drone</div></div></div>
-          <div class="weather-strip"><span class="ws-icon">&#x26C5;</span><span class="ws-temps"><span class="hi">20&#xB0;C</span> / <span class="lo">13&#xB0;C</span></span><span class="ws-rain">~45%</span><span class="ws-desc">Mild Auckland. After Queenstown, this feels warm!</span></div>
-          <div class="detail-row"><span class="icon">&#x1F60C;</span><span>Flexible &mdash; sleep in!</span></div>
-          <div class="detail-row"><span class="icon">&#x1F3DB;&#xFE0F;</span><span><strong>Auckland Museum</strong> &bull; <strong>Mount Eden</strong> &bull; <strong>Devonport</strong></span></div>
-          <div class="detail-row"><span class="icon">&#x1F37D;&#xFE0F;</span><span>Farewell dinner</span></div>
-          <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; From Ibrahim &amp; Haajar</div><div class="sc-msg">Our last full day together. Let's not rush &mdash; let's soak it all in. We've loved every second of having you here. This is just the beginning.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">A message awaits</span></div></div>
-          <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
-        </div></div>
-      </div>
-    </div>
+<!-- DAY 9: One Tree Hill (UPDATED) -->
+<div class="day-card theme-buffer" data-day="9"><div class="day-dot">&#x1F333;</div><div class="card-inner" onclick="toggleCard(this)"><div class="card-header"><span class="card-day-num">09</span><div class="card-header-text"><div class="card-title">Auckland Scenic Day</div><div class="card-date">Friday, April 10</div></div><span class="card-expand-icon">&#x25BC;</span></div>
+<div class="card-body"><div class="card-content">
+  <div class="carousel"><div class="carousel-track"><div class="carousel-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Mount_Eden_crater_with_Auckland_CBD_and_Rangitoto_skyline.jpg/1200px-Mount_Eden_crater_with_Auckland_CBD_and_Rangitoto_skyline.jpg" alt="Auckland"><div class="slide-caption">Auckland skyline &amp; Rangitoto</div></div><div class="carousel-slide"><img src="https://images.unsplash.com/photo-1591169626803-84f3ceed5917?w=1200&h=400&fit=crop" alt="Auckland"><div class="slide-caption">Auckland from the volcanic hills</div></div></div><button class="carousel-prev">&#x2039;</button><button class="carousel-next">&#x203A;</button><div class="carousel-dots"></div></div>
+  <div class="video-embed" data-id="1PeSJ2id9aY"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/1PeSJ2id9aY/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; Auckland Volcanic Hills</div></div></div>
+  <div class="weather-strip"><span class="ws-icon">&#x26C5;</span><span class="ws-temps"><span class="hi">20&#xB0;C</span> / <span class="lo">13&#xB0;C</span></span><span class="ws-rain">~45%</span><span class="ws-desc">Mild Auckland. After Queenstown, this feels warm!</span></div>
+  <div class="detail-row"><span class="icon">&#x1F60C;</span><span>Flexible day &mdash; sleep in!</span></div>
+  <div class="detail-row"><span class="icon">&#x1F3DB;&#xFE0F;</span><span><strong>Auckland Museum</strong> &mdash; M&#x101;ori culture, natural history <span class="cost-tag">$28/adult &bull; $14/child</span></span></div>
+  <div class="detail-row"><span class="icon">&#x1F333;</span><span><strong>One Tree Hill</strong> (Maungakiekie) &mdash; iconic volcanic summit, 360&#xB0; views, Cornwall Park <span class="cost-tag free">Free</span></span></div>
+  <div class="detail-row"><span class="icon">&#x26F4;&#xFE0F;</span><span>Optional: <strong>Devonport</strong> &mdash; charming seaside village <span class="cost-tag">~$23 ferry return</span></span></div>
+  <div class="detail-row"><span class="icon">&#x1F37D;&#xFE0F;</span><span>Dinner out</span></div>
+  <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; From Ibrahim &amp; Haajar</div><div class="sc-msg">Our last full day together. Let's not rush &mdash; let's soak it all in. We've loved every second of having you here. This is just the beginning.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">A message awaits</span></div></div>
+  <hr class="divider">
+  <div class="suggest-section"><h4>&#x1F37D;&#xFE0F; Halal Dinner</h4><div class="suggest-grid">
+    <div class="suggest-card"><div class="sc-name">Jaan Turkish Cafe <span class="halal-badge">Halal</span></div><div class="sc-type food">Turkish &bull; Auckland CBD</div><div class="sc-desc">Kebabs, falafel, grills. Reliable and delicious.</div><a href="https://www.google.com/maps/search/?api=1&query=Jaan+Turkish+Cafe+Auckland" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+    <div class="suggest-card"><div class="sc-name">Bawarchi Restaurant <span class="halal-badge">Halal Certified</span></div><div class="sc-type food">Indian &bull; Auckland</div><div class="sc-desc">Halal-certified. Aromatic biryanis, tandoori, curries.</div><a href="https://www.google.com/maps/search/?api=1&query=Bawarchi+Restaurant+Auckland" target="_blank" class="maps-btn" onclick="event.stopPropagation()">&#x1F4CD; Open in Maps</a></div>
+  </div></div>
+  <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
+</div></div></div></div>
 
-    <!-- DAY 10 -->
-    <div class="day-card theme-departure" data-day="10">
-      <div class="day-dot">&#x1F44B;</div>
-      <div class="card-inner" onclick="toggleCard(this)">
-        <div class="card-header"><span class="card-day-num">10</span><div class="card-header-text"><div class="card-title">Departure from Auckland</div><div class="card-date">Saturday, April 11</div></div><span class="card-expand-icon">&#x25BC;</span></div>
-        <div class="card-body"><div class="card-content">
-          <div class="video-embed" data-id="TrxCgs2VMKY"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/TrxCgs2VMKY/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; New Zealand in 4K &mdash; One Last Look</div></div></div>
-          <div class="detail-row"><span class="icon">&#x1F3E0;</span><span>Morning packing &amp; last souvenirs</span></div>
-          <div class="detail-row"><span class="icon">&#x2708;&#xFE0F;</span><span>Flight <strong>4:25 PM</strong></span></div>
-          <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; From Ibrahim &amp; Haajar</div><div class="sc-msg">This isn't goodbye &mdash; it's "ka kite an&#x14D;" (see you again). We're already dreaming up the next adventure. We love you so much. Safe travels home.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">One last surprise</span></div></div>
-          <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
-        </div></div>
-      </div>
-    </div>
+<!-- DAY 10 -->
+<div class="day-card theme-departure" data-day="10"><div class="day-dot">&#x1F44B;</div><div class="card-inner" onclick="toggleCard(this)"><div class="card-header"><span class="card-day-num">10</span><div class="card-header-text"><div class="card-title">Departure from Auckland</div><div class="card-date">Saturday, April 11</div></div><span class="card-expand-icon">&#x25BC;</span></div>
+<div class="card-body"><div class="card-content">
+  <div class="video-embed" data-id="TrxCgs2VMKY"><div class="video-thumb" style="background-image:url(https://img.youtube.com/vi/TrxCgs2VMKY/hqdefault.jpg)"><button class="video-play">&#x25B6;</button><div class="video-label">&#x1F3AC; NZ in 4K &mdash; One Last Look</div></div></div>
+  <div class="detail-row"><span class="icon">&#x1F3E0;</span><span>Morning packing &amp; souvenirs</span></div>
+  <div class="detail-row"><span class="icon">&#x2708;&#xFE0F;</span><span>Flight <strong>4:25 PM</strong></span></div>
+  <div class="scratch-card"><div class="scratch-content personal"><div class="sc-label">&#x1F496; From Ibrahim &amp; Haajar</div><div class="sc-msg">This isn't goodbye &mdash; it's "ka kite an&#x14D;" (see you again). We're already dreaming up the next adventure. We love you so much.</div></div><div class="scratch-overlay"><canvas></canvas><span class="scratch-hint">&#x2728; Scratch Me!</span><span class="scratch-hint-sub">One last surprise</span></div></div>
+  <div class="people-tags"><span class="people-tag tag-selma">Selma</span><span class="people-tag tag-yasmeen">Yasmeen</span><span class="people-tag tag-ibrahim">Ibrahim</span></div>
+</div></div></div></div>
 
   </div>
 </section>
@@ -588,13 +440,12 @@
 <section class="hotels-section" id="hotels">
   <h2 class="section-title">Where We're <span>Staying</span></h2>
   <div class="hotels-grid">
-    <div class="hotel-detail-card"><div class="hotel-detail-header" style="background:linear-gradient(135deg,#dc2626,#f97316)"><h3>Newina Rotorua</h3><div class="location">&#x1F4CD; Night of Apr 3</div></div><div class="hotel-detail-body"><div class="room-info"><div class="room-name">Premium Suite &mdash; Hot Tub</div><div class="room-guest">&#x1F464; Under Selma Ferjani</div><div class="room-conf">Conf: H-2HTBM4CTBLPL</div></div><div class="room-info"><div class="room-name">Executive Suite &mdash; Mountain View</div><div class="room-guest">&#x1F464; Under Ibrahim Houissa</div><div class="room-conf">Conf: H-V8P8NPB6P4DJ</div></div><a href="https://www.newina.co.nz/" target="_blank" class="hotel-link">&#x1F517; Website</a></div></div>
-    <div class="hotel-detail-card"><div class="hotel-detail-header" style="background:linear-gradient(135deg,#7c3aed,#6366f1)"><h3>Airbnb &mdash; Taup&#x14D;</h3><div class="location">&#x1F4CD; Night of Apr 5</div></div><div class="hotel-detail-body"><div class="room-info"><div class="room-name">Cosy Airbnb &mdash; TBD</div></div></div></div>
+    <div class="hotel-detail-card"><div class="hotel-detail-header" style="background:linear-gradient(135deg,#dc2626,#f97316)"><h3>Newina Rotorua</h3><div class="location">&#x1F4CD; Night of Apr 3</div></div><div class="hotel-detail-body"><div class="room-info"><div class="room-name">Premium Suite &mdash; Hot Tub</div><div class="room-guest">&#x1F464; Selma Ferjani</div><div class="room-conf">Conf: H-2HTBM4CTBLPL</div></div><div class="room-info"><div class="room-name">Executive Suite &mdash; Mountain View</div><div class="room-guest">&#x1F464; Ibrahim Houissa</div><div class="room-conf">Conf: H-V8P8NPB6P4DJ</div></div><a href="https://www.newina.co.nz/" target="_blank" class="hotel-link">&#x1F517; Website</a></div></div>
+    <div class="hotel-detail-card"><div class="hotel-detail-header" style="background:linear-gradient(135deg,#7c3aed,#6366f1)"><h3>Airbnb &mdash; Taup&#x14D;</h3><div class="location">&#x1F4CD; Night of Apr 4</div></div><div class="hotel-detail-body"><div class="room-info"><div class="room-name">Cosy Airbnb &mdash; TBD</div></div></div></div>
     <div class="hotel-detail-card"><div class="hotel-detail-header" style="background:linear-gradient(135deg,#0d9488,#0ea5e9)"><h3>Rendez Vous Heritage</h3><div class="location">&#x1F4CD; Queenstown &bull; Apr 7-8</div></div><div class="hotel-detail-body"><div class="room-info"><div class="room-name">Apartment, 1 Bed, Lake View</div><div class="room-conf">Conf: H-74BX5ZKFTPN7</div></div><a href="https://rendezvoushotels.co.nz/book-accommodation/queenstown/rendezvous-heritage-hotel-queenstown/" target="_blank" class="hotel-link">&#x1F517; Website</a></div></div>
   </div>
 </section>
 
-<!-- SHEEP -->
 <div class="sheep-parade"><span class="sheep">&#x1F411;</span><span class="sheep">&#x1F411;</span><span class="sheep">&#x1F411;</span><span class="sheep">&#x1F411;</span></div>
 
 <footer class="footer">
@@ -605,49 +456,25 @@
 </footer>
 
 <script>
-// === INTRO ===
-(function(){const s=document.getElementById('intro-stars');for(let i=0;i<80;i++){const d=document.createElement('div');d.className='intro-star';d.style.cssText='width:'+(.5+Math.random()*2.5)+'px;height:'+(.5+Math.random()*2.5)+'px;top:'+Math.random()*100+'%;left:'+Math.random()*100+'%;animation-delay:'+Math.random()*2+'s;animation-duration:'+(1+Math.random()*2)+'s;';s.appendChild(d);}
-setTimeout(()=>{document.getElementById('intro').classList.add('fade-out');setTimeout(()=>{document.getElementById('intro').style.display='none';},1000);},5500);})();
+(function(){const s=document.getElementById('intro-stars');for(let i=0;i<80;i++){const d=document.createElement('div');d.className='intro-star';d.style.cssText='width:'+(.5+Math.random()*2.5)+'px;height:'+(.5+Math.random()*2.5)+'px;top:'+Math.random()*100+'%;left:'+Math.random()*100+'%;animation-delay:'+Math.random()*2+'s;animation-duration:'+(1+Math.random()*2)+'s;';s.appendChild(d);}setTimeout(()=>{document.getElementById('intro').classList.add('fade-out');setTimeout(()=>document.getElementById('intro').style.display='none',1000);},5500);})();
 function skipIntro(){const i=document.getElementById('intro');i.classList.add('fade-out');setTimeout(()=>i.style.display='none',600);}
-
-// === CARDS ===
 function toggleCard(el){const c=el.closest('.day-card'),w=c.classList.contains('open');document.querySelectorAll('.day-card.open').forEach(x=>x.classList.remove('open'));if(!w)c.classList.add('open');}
-
-// === SCROLL ANIMATIONS ===
 const obs=new IntersectionObserver(e=>{e.forEach((x,i)=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('visible'),i*100);obs.unobserve(x.target);}});},{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.day-card').forEach(c=>obs.observe(c));
-
-// === PARALLAX ===
-let ticking=false;
-window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(()=>{const s=window.scrollY;document.querySelectorAll('.parallax-layer').forEach(l=>{const sp=parseFloat(l.dataset.speed||0.3);l.style.transform='translateY('+(s*sp)+'px)';});ticking=false;});ticking=true;}},{passive:true});
-
-// === COUNTDOWN ===
 (function(){const t=new Date('2026-04-02T14:00:00+12:00').getTime(),te=new Date('2026-04-11T16:25:00+12:00').getTime();function u(){const n=Date.now(),d=t-n;if(d<=0){document.getElementById('countdown').style.display='none';const l=document.getElementById('cd-live');l.style.display='block';l.innerHTML=n<te?'\u{1F389} Day '+Math.min(Math.floor((n-t)/864e5)+1,9)+' of your NZ adventure!':'What an incredible trip! \u{1F1F3}\u{1F1FF}';return;}const dy=Math.floor(d/864e5),h=Math.floor(d%864e5/36e5),m=Math.floor(d%36e5/6e4),s=Math.floor(d%6e4/1e3);document.getElementById('cd-days').textContent=dy;document.getElementById('cd-hours').textContent=h;document.getElementById('cd-mins').textContent=m;document.getElementById('cd-secs').textContent=String(s).padStart(2,'0');}u();setInterval(u,1000);})();
-
-// === CAROUSELS ===
 document.querySelectorAll('.carousel').forEach(car=>{const tr=car.querySelector('.carousel-track'),sl=tr.querySelectorAll('.carousel-slide');if(sl.length<2){car.querySelector('.carousel-prev')?.remove();car.querySelector('.carousel-next')?.remove();car.querySelector('.carousel-dots')?.remove();return;}let idx=0;const dots=car.querySelector('.carousel-dots');sl.forEach((_,i)=>{const d=document.createElement('button');d.className='carousel-dot'+(i===0?' active':'');d.onclick=e=>{e.stopPropagation();go(i);};dots.appendChild(d);});function go(i){idx=i;tr.style.transform='translateX(-'+idx*100+'%)';dots.querySelectorAll('.carousel-dot').forEach((d,j)=>d.classList.toggle('active',j===idx));}car.querySelector('.carousel-prev').onclick=e=>{e.stopPropagation();go((idx-1+sl.length)%sl.length);};car.querySelector('.carousel-next').onclick=e=>{e.stopPropagation();go((idx+1)%sl.length);};let tx=0;tr.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});tr.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40)dx<0?go(Math.min(idx+1,sl.length-1)):go(Math.max(idx-1,0));},{passive:true});});
-
-// === VIDEO EMBEDS ===
-document.querySelectorAll('.video-embed').forEach(v=>{v.addEventListener('click',e=>{e.stopPropagation();if(v.classList.contains('playing'))return;const id=v.dataset.id;const iframe=document.createElement('iframe');iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';iframe.allow='autoplay;encrypted-media';iframe.allowFullscreen=true;v.appendChild(iframe);v.classList.add('playing');});});
-
-// === SCRATCH ===
-document.querySelectorAll('.scratch-card').forEach(card=>{const ov=card.querySelector('.scratch-overlay'),cv=ov.querySelector('canvas'),ctx=cv.getContext('2d');let scratching=false,total=0,cleared=0;function init(){const r=card.getBoundingClientRect();cv.width=r.width;cv.height=r.height;const g=ctx.createLinearGradient(0,0,r.width,r.height);g.addColorStop(0,'#a855f7');g.addColorStop(0.5,'#6366f1');g.addColorStop(1,'#0d9488');ctx.fillStyle=g;ctx.fillRect(0,0,r.width,r.height);for(let i=0;i<40;i++){ctx.beginPath();ctx.arc(Math.random()*r.width,Math.random()*r.height,Math.random()*2+.5,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+(0.2+Math.random()*.5)+')';ctx.fill();}total=r.width*r.height;cleared=0;}function scratch(x,y){ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,24,0,Math.PI*2);ctx.fill();cleared+=Math.PI*576;if(cleared/total>.3)reveal();}function reveal(){card.classList.add('revealed');}function gp(e,t){const r=cv.getBoundingClientRect(),s=t?e.touches[0]:e;return{x:s.clientX-r.left,y:s.clientY-r.top};}cv.addEventListener('mousedown',e=>{e.stopPropagation();scratching=true;init();const p=gp(e);scratch(p.x,p.y);});cv.addEventListener('mousemove',e=>{if(scratching){const p=gp(e);scratch(p.x,p.y);}});cv.addEventListener('mouseup',()=>scratching=false);cv.addEventListener('touchstart',e=>{e.stopPropagation();e.preventDefault();scratching=true;init();const p=gp(e,1);scratch(p.x,p.y);},{passive:false});cv.addEventListener('touchmove',e=>{if(scratching){e.preventDefault();const p=gp(e,1);scratch(p.x,p.y);}},{passive:false});cv.addEventListener('touchend',()=>scratching=false);cv.addEventListener('click',e=>{e.stopPropagation();reveal();});const io=new IntersectionObserver(en=>{if(en[0].isIntersecting){init();io.disconnect();}});io.observe(card);});
-
-// === QUIZ ===
-const qd=[{q:"How many sheep per person in NZ?",o:["About 5","About 15","About 25"],a:0,f:"It used to be 20:1 in the 80s! Now ~5 per person."},{q:"What does 'Kia Ora' mean?",o:["Thank you","Be well / Hello","Goodbye"],a:1,f:"Literally 'be well' \u2014 used as a universal greeting!"},{q:"NZ was the first country to\u2026?",o:["Climb Everest","Split the atom","Give women the vote"],a:2,f:"In 1893! Thanks to Kate Sheppard."},{q:"Milford Sound is technically a\u2026?",o:["Sound","Fjord","Bay"],a:1,f:"Captain Cook named it wrong! Carved by glaciers, not rivers."},{q:"What is NZ's national bird?",o:["Tui","Kakapo","Kiwi"],a:2,f:"Kiwis have nostrils at the tip of their beak \u2014 they sniff out food like tiny feathered dogs!"},{q:"How tall is Mitre Peak?",o:["892m","1,692m","2,450m"],a:1,f:"Rises almost vertically from the water \u2014 you'll see it on Day 7!"},{q:"Lake Taup\u014D was formed by\u2026?",o:["A meteor","A supervolcano eruption","Glacial movement"],a:1,f:"One of the most powerful eruptions in Earth's history!"},{q:"What do Kiwis call flip-flops?",o:["Thongs","Jandals","Sliders"],a:1,f:"Short for 'Japanese sandals' \u2014 a true Kiwi icon! \uD83D\uDE02"}];
+document.querySelectorAll('.video-embed').forEach(v=>{v.addEventListener('click',e=>{e.stopPropagation();if(v.classList.contains('playing'))return;const id=v.dataset.id,iframe=document.createElement('iframe');iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';iframe.allow='autoplay;encrypted-media';iframe.allowFullscreen=true;v.appendChild(iframe);v.classList.add('playing');});});
+document.querySelectorAll('.scratch-card').forEach(card=>{const ov=card.querySelector('.scratch-overlay'),cv=ov.querySelector('canvas'),ctx=cv.getContext('2d');let scratching=false,total=0,cleared=0;function init(){const r=card.getBoundingClientRect();cv.width=r.width;cv.height=r.height;const g=ctx.createLinearGradient(0,0,r.width,r.height);g.addColorStop(0,'#a855f7');g.addColorStop(0.5,'#6366f1');g.addColorStop(1,'#0d9488');ctx.fillStyle=g;ctx.fillRect(0,0,r.width,r.height);for(let i=0;i<40;i++){ctx.beginPath();ctx.arc(Math.random()*r.width,Math.random()*r.height,Math.random()*2+.5,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+(0.2+Math.random()*.5)+')';ctx.fill();}total=r.width*r.height;cleared=0;}function scratch(x,y){ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,24,0,Math.PI*2);ctx.fill();cleared+=1810;if(cleared/total>.3)reveal();}function reveal(){card.classList.add('revealed');}function gp(e,t){const r=cv.getBoundingClientRect(),s=t?e.touches[0]:e;return{x:s.clientX-r.left,y:s.clientY-r.top};}cv.addEventListener('mousedown',e=>{e.stopPropagation();scratching=true;init();const p=gp(e);scratch(p.x,p.y);});cv.addEventListener('mousemove',e=>{if(scratching){const p=gp(e);scratch(p.x,p.y);}});cv.addEventListener('mouseup',()=>scratching=false);cv.addEventListener('touchstart',e=>{e.stopPropagation();e.preventDefault();scratching=true;init();const p=gp(e,1);scratch(p.x,p.y);},{passive:false});cv.addEventListener('touchmove',e=>{if(scratching){e.preventDefault();const p=gp(e,1);scratch(p.x,p.y);}},{passive:false});cv.addEventListener('touchend',()=>scratching=false);cv.addEventListener('click',e=>{e.stopPropagation();reveal();});const io=new IntersectionObserver(en=>{if(en[0].isIntersecting){init();io.disconnect();}});io.observe(card);});
+const qd=[{q:"How many sheep per person in NZ?",o:["About 5","About 15","About 25"],a:0,f:"Used to be 20:1 in the 80s! Now ~5."},{q:"What does 'Kia Ora' mean?",o:["Thank you","Be well / Hello","Goodbye"],a:1,f:"Literally 'be well' \u2014 universal NZ greeting!"},{q:"NZ was the first country to\u2026?",o:["Climb Everest","Split the atom","Give women the vote"],a:2,f:"In 1893! Thanks to Kate Sheppard."},{q:"Milford Sound is technically a\u2026?",o:["Sound","Fjord","Bay"],a:1,f:"Captain Cook named it wrong! Carved by glaciers."},{q:"What is NZ's national bird?",o:["Tui","Kakapo","Kiwi"],a:2,f:"Kiwis have nostrils at the tip of their beak!"},{q:"How tall is Mitre Peak?",o:["892m","1,692m","2,450m"],a:1,f:"Rises vertically from the water \u2014 you'll see it Day 7!"},{q:"Lake Taup\u014D was formed by\u2026?",o:["A meteor","A supervolcano","Glacial movement"],a:1,f:"One of the most powerful eruptions in Earth's history!"},{q:"What do Kiwis call flip-flops?",o:["Thongs","Jandals","Sliders"],a:1,f:"Short for 'Japanese sandals' \u2014 a true Kiwi icon! \uD83D\uDE02"}];
 let qI=0,sc=0;function renderQ(){const c=document.getElementById('quiz-container');c.innerHTML='';qd.forEach((q,i)=>{const d=document.createElement('div');d.className='quiz-card'+(i===0?' active':'');d.id='qc-'+i;d.innerHTML='<div class="quiz-q"><span class="q-num">Q'+(i+1)+' </span>'+q.q+'</div><div class="quiz-opts">'+q.o.map((o,j)=>'<button class="quiz-opt" onclick="ansQ('+i+','+j+')">'+o+'</button>').join('')+'</div><div class="quiz-explain" id="qe-'+i+'">'+q.f+'</div><button class="quiz-next-btn" id="qn-'+i+'" onclick="nextQ('+i+')">'+(i<qd.length-1?'Next \u2192':'Results \uD83C\uDF89')+'</button>';c.appendChild(d);});}
 function ansQ(qi,oi){const cd=document.getElementById('qc-'+qi),os=cd.querySelectorAll('.quiz-opt');os.forEach((o,j)=>{o.classList.add('disabled');if(j===qd[qi].a)o.classList.add('correct');if(j===oi&&j!==qd[qi].a)o.classList.add('wrong');});if(oi===qd[qi].a)sc++;document.getElementById('qe-'+qi).classList.add('show');document.getElementById('qn-'+qi).classList.add('show');}
 function nextQ(qi){document.getElementById('qc-'+qi).classList.remove('active');if(qi<qd.length-1){document.getElementById('qc-'+(qi+1)).classList.add('active');qI=qi+1;document.getElementById('quiz-prog-text').textContent='Question '+(qI+1)+' of '+qd.length;document.getElementById('quiz-prog-fill').style.width=((qI+1)/qd.length*100)+'%';}else showQR();}
-function showQR(){document.getElementById('quiz-prog-text').textContent='Complete!';document.getElementById('quiz-prog-fill').style.width='100%';const r=document.getElementById('quiz-result');r.classList.add('active');document.getElementById('quiz-score-num').textContent=sc+'/'+qd.length;const p=sc/qd.length;let rt,ms;if(p===1){rt='\uD83C\uDDF3\uD83C\uDDFF Honorary Kiwi!';ms="Perfect! You're basically a local.";}else if(p>=.75){rt='\uD83E\uDD29 Almost a Kiwi!';ms="Impressive! You'll fit right in.";}else if(p>=.5){rt='\uD83D\uDE0A Getting There!';ms="Not bad! Learn the rest on the trip.";}else{rt='\uD83D\uDE05 Tourist Mode';ms="No worries \u2014 that's what the trip is for!";}document.getElementById('quiz-rating').textContent=rt;document.getElementById('quiz-result-msg').textContent=ms;}
+function showQR(){document.getElementById('quiz-prog-text').textContent='Complete!';document.getElementById('quiz-prog-fill').style.width='100%';const r=document.getElementById('quiz-result');r.classList.add('active');document.getElementById('quiz-score-num').textContent=sc+'/'+qd.length;const p=sc/qd.length;let rt,ms;if(p===1){rt='\uD83C\uDDF3\uD83C\uDDFF Honorary Kiwi!';ms="Perfect!";}else if(p>=.75){rt='\uD83E\uDD29 Almost a Kiwi!';ms="Impressive!";}else if(p>=.5){rt='\uD83D\uDE0A Getting There!';ms="Learn the rest on the trip.";}else{rt='\uD83D\uDE05 Tourist Mode';ms="That's what the trip is for!";}document.getElementById('quiz-rating').textContent=rt;document.getElementById('quiz-result-msg').textContent=ms;}
 function resetQuiz(){sc=0;qI=0;document.getElementById('quiz-result').classList.remove('active');document.getElementById('quiz-prog-text').textContent='Question 1 of '+qd.length;document.getElementById('quiz-prog-fill').style.width=(100/qd.length)+'%';renderQ();}renderQ();
-
-// === PACKING ===
 const pi=[{c:"\uD83C\uDF27\uFE0F Rain Gear",i:["Packable waterproof jacket","Waterproof over-trousers","Waterproof shoes/boots","Compact umbrella"]},{c:"\u2744\uFE0F Warm (Queenstown)",i:["Thermal base (top+bottom)","Fleece / wool mid-layer","Down / puffer jacket","Beanie, gloves & scarf","Warm socks"]},{c:"\uD83C\uDF1E Everyday",i:["Light layers (tees, long-sleeves)","Walking shoes","Sunglasses & sunscreen","Dry bags for electronics","Day bag / backpack","Camera / charger"]}];
 const PK='nz-trip-pack';function lp(){try{return JSON.parse(localStorage.getItem(PK))||{};}catch(e){return{};}}function sp(s){localStorage.setItem(PK,JSON.stringify(s));}
 function rp(){const g=document.getElementById('pack-grid'),st=lp();let t=0;g.innerHTML='';pi.forEach(c=>{const cd=document.createElement('div');cd.className='pack-card';cd.innerHTML='<h3>'+c.c+'</h3>';c.i.forEach(it=>{const k=it.replace(/\s/g,'_');t++;const r=document.createElement('div');r.className='pack-item'+(st[k]?' checked':'');r.innerHTML='<div class="pack-check"><span class="pack-check-mark">\u2714</span></div><span class="pack-label">'+it+'</span>';r.onclick=()=>{const s=lp();s[k]=!s[k];sp(s);r.classList.toggle('checked');if(s[k])r.classList.add('just-checked');setTimeout(()=>r.classList.remove('just-checked'),400);upp();};cd.appendChild(r);});g.appendChild(cd);});window._pt=t;upp();}
 function upp(){const s=lp(),c=Object.values(s).filter(Boolean).length,t=window._pt||15;document.getElementById('pack-prog-text').textContent=c+' of '+t+' packed'+(c===t?' \uD83C\uDF89':'');document.getElementById('pack-prog-fill').style.width=(c/t*100)+'%';}rp();
-
-// === CONFETTI ===
 (function(){const cv=document.getElementById('confetti-canvas'),cx=cv.getContext('2d');let W,H;const ps=[],co=['#f59e0b','#22c55e','#38bdf8','#f43f5e','#a855f7','#0d9488','#fff'];let st;function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;}function cr(){return{x:Math.random()*W,y:Math.random()*-H,w:6+Math.random()*8,h:4+Math.random()*6,c:co[Math.floor(Math.random()*co.length)],vx:(Math.random()-.5)*3,vy:2+Math.random()*4,r:Math.random()*360,rs:(Math.random()-.5)*10};}function init(){rs();for(let i=0;i<120;i++){const p=cr();p.y=Math.random()*-H;ps.push(p);}st=Date.now();an();}function an(){const el=Date.now()-st;cx.clearRect(0,0,W,H);let a=1;if(el>4000)a=Math.max(0,1-(el-4000)/2000);if(a<=0){cx.clearRect(0,0,W,H);cv.style.display='none';return;}ps.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.r+=p.rs;cx.save();cx.globalAlpha=a;cx.translate(p.x,p.y);cx.rotate(p.r*Math.PI/180);cx.fillStyle=p.c;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore();if(p.y>H+20){p.y=Math.random()*-100;p.x=Math.random()*W;}});requestAnimationFrame(an);}addEventListener('resize',rs);addEventListener('load',init);})();
 </script>
 </body>
